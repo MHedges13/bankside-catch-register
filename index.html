@@ -92,12 +92,17 @@ main{ padding-top:20px; }
   display:flex; flex-wrap:wrap; gap:10px; align-items:center;
   padding-bottom:14px; margin-bottom:6px; border-bottom:1px solid var(--border-soft);
 }
-select, .text-input, input[type="text"], input[type="number"], input[type="date"], input[type="time"], textarea{
+select, .text-input, input[type="text"], input[type="number"], input[type="date"], input[type="time"], input[type="email"], input[type="password"], textarea{
   background:var(--surface); border:1px solid var(--border); color:var(--text);
   border-radius:var(--radius-s); padding:9px 11px; font-size:0.9rem;
   outline:none; transition:border-color .15s ease;
 }
 select:focus, .text-input:focus, input:focus, textarea:focus{ border-color:var(--accent); }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--text);
+  -webkit-box-shadow:0 0 0px 1000px var(--surface) inset;
+  transition:background-color 5000s ease-in-out 0s;
+}
 #searchBox{ flex:1 1 200px; min-width:160px; }
 .filters select{ flex:0 0 auto; }
 .data-actions{ display:flex; gap:8px; margin-left:auto; }
@@ -1046,8 +1051,8 @@ const SPECIES_LIST = UK_SPECIES.concat(EXOTIC_SPECIES).concat(['Other']);
    -> Settings -> API). Both are safe to expose in client-side code;
    Row Level Security is what actually protects your data.
    ================================================================== */
-  const SUPABASE_URL = 'https://jytdhynausoolunbdgni.supabase.co';
-   const SUPABASE_ANON_KEY = 'sb_publishable_4XrGhmxrJ2TvOQusdtQjaw_L0rinhJf';
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
 
 const SUPABASE_CONFIGURED = SUPABASE_URL.indexOf('PASTE_') !== 0 && SUPABASE_ANON_KEY.indexOf('PASTE_') !== 0;
 let supabaseClient = null;
