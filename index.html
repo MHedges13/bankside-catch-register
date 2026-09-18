@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankside &mdash; Catch Register</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bankside">
+<meta name="theme-color" content="#0c1310">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#0c1310;
+  --bg-elevated:#101c16;
+  --surface:#15221b;
+  --surface-2:#1b2b22;
+  --border:#28392f;
+  --border-soft:#1e2c24;
+  --text:#edf3ee;
+  --text-dim:#93a89b;
+  --text-faint:#5e7266;
+  --accent:#d1a054;
+  --accent-strong:#e7bd76;
+  --accent-soft:rgba(209,160,84,0.14);
+  --green:#6fae82;
+  --danger:#c2604a;
+  --danger-soft:rgba(194,96,74,0.16);
+  --radius-s:3px;
+  --radius-m:6px;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(ellipse at top left, rgba(111,174,130,0.06), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+button, input, select, textarea{ font-family:inherit; color:inherit; }
+button{ cursor:pointer; }
+::selection{ background:var(--accent-soft); }
+
+.serif{ font-family:'Fraunces','Georgia',serif; }
+
+/* ---------- Layout shell ---------- */
+#app{ max-width:920px; margin:0 auto; padding:0 16px 64px; }
+
+header.topbar{
+  padding:22px 0 14px;
+  display:flex; flex-direction:column; gap:16px;
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand svg{ flex:none; }
+.brand-name{
+  font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+  font-size:1.7rem; line-height:1; color:var(--text);
+  display:block;
+}
+.brand-sub{
+  display:block; font-size:0.72rem; color:var(--text-faint);
+  letter-spacing:0.03em; margin-top:3px;
+}
+
+nav.tabs{
+  display:flex; gap:4px; border-bottom:1px solid var(--border-soft);
+}
+.tab{
+  background:none; border:none; border-bottom:2px solid transparent;
+  color:var(--text-dim); font-size:0.92rem; font-weight:500;
+  padding:10px 4px; margin-right:22px; white-space:nowrap;
+  transition:color .15s ease, border-color .15s ease;
+}
+.tab:hover{ color:var(--text); }
+.tab.active{ color:var(--accent-strong); border-bottom-color:var(--accent); }
+
+main{ padding-top:20px; }
+.view{ display:none; }
+.view.active{ display:block; animation:fade .25s ease; }
+@keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+/* ---------- Filters ---------- */
+.filters{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  padding-bottom:14px; margin-bottom:6px; border-bottom:1px solid var(--border-soft);
+}
+select, .text-input, input[type="text"], input[type="number"], input[type="date"], input[type="time"], textarea{
+  background:var(--surface); border:1px solid var(--border); color:var(--text);
+  border-radius:var(--radius-s); padding:9px 11px; font-size:0.9rem;
+  outline:none; transition:border-color .15s ease;
+}
+select:focus, .text-input:focus, input:focus, textarea:focus{ border-color:var(--accent); }
+#searchBox{ flex:1 1 200px; min-width:160px; }
+.filters select{ flex:0 0 auto; }
+.data-actions{ display:flex; gap:8px; margin-left:auto; }
+
+.btn{
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  border-radius:var(--radius-s); padding:9px 14px; font-size:0.85rem; font-weight:500;
+}
+.btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.btn-primary{
+  background:var(--accent); border-color:var(--accent); color:#1a1409; font-weight:600;
+}
+.btn-primary:hover{ background:var(--accent-strong); color:#1a1409; }
+.btn-ghost{ background:none; border:1px solid var(--border); }
+
+#resultsMeta{ color:var(--text-faint); font-size:0.8rem; margin:14px 2px 10px; }
+
+/* ---------- Log / sessions ---------- */
+.session{ margin-bottom:22px; }
+.session-head{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px;
+  padding-bottom:8px; margin-bottom:2px; border-bottom:1px solid var(--border-soft);
+}
+.session-date{ font-family:'Fraunces',serif; font-weight:500; font-size:1.02rem; color:var(--accent-strong); }
+.session-venue{ font-size:0.95rem; color:var(--text); }
+.session-sub{ color:var(--text-faint); font-size:0.82rem; margin-left:6px; }
+.session-count{ margin-left:auto; font-size:0.75rem; color:var(--text-faint); border:1px solid var(--border); border-radius:20px; padding:2px 9px; }
+.session-blank .session-date, .session-blank .session-venue{ opacity:0.6; }
+.blank-label{ font-style:italic; color:var(--text-faint); font-weight:400; }
+
+.catch-rows{ display:flex; flex-direction:column; }
+.catch-row{
+  border-bottom:1px solid var(--border-soft);
+  padding:10px 2px; cursor:pointer;
+}
+.catch-row:hover .row-main{ color:var(--text); }
+.row-main{
+  display:grid;
+  grid-template-columns: 1.3fr 0.9fr 1.6fr auto;
+  align-items:center; gap:10px;
+}
+.row-species{ font-weight:600; font-size:0.94rem; }
+.species-detail{ font-weight:400; color:var(--text-faint); font-size:0.82em; }
+.row-qty{ color:var(--accent-strong); font-variant-numeric:tabular-nums; }
+.row-weight{ font-variant-numeric:tabular-nums; font-family:'Fraunces',serif; font-size:1.05rem; color:var(--accent-strong); }
+.row-tags{ color:var(--text-dim); font-size:0.82rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.row-actions{ display:flex; gap:6px; justify-self:end; opacity:0.55; }
+.catch-row:hover .row-actions{ opacity:1; }
+.icon-btn{
+  background:none; border:1px solid var(--border); color:var(--text-dim);
+  font-size:0.72rem; padding:4px 8px; border-radius:var(--radius-s);
+}
+.icon-btn:hover{ color:var(--text); border-color:var(--text-dim); }
+.icon-btn.danger:hover{ color:var(--danger); border-color:var(--danger); }
+
+.row-expand{
+  max-height:0; overflow:hidden; transition:max-height .22s ease;
+}
+.catch-row.open .row-expand{ max-height:600px; padding-top:12px; }
+.row-detail-list{ display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:0; font-size:0.84rem; }
+.row-detail-list dt{ color:var(--text-faint); }
+.row-detail-list dd{ margin:0; color:var(--text-dim); }
+.no-extra{ color:var(--text-faint); font-size:0.82rem; font-style:italic; margin:0; }
+
+.empty-state{ color:var(--text-faint); font-size:0.9rem; padding:30px 4px; text-align:center; border:1px dashed var(--border); border-radius:var(--radius-m); }
+
+/* ---------- Add / Edit form ---------- */
+#view-add .view-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; }
+#formTitle{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:1.4rem; margin:0; }
+
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+.field label{ font-size:0.78rem; color:var(--text-dim); }
+.field input, .field select, .field textarea{ width:100%; }
+.field textarea{ resize:vertical; min-height:70px; }
+
+.field-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 14px; }
+.field-grid .field{ min-width:0; }
+.weight-pair{ display:flex; gap:8px; }
+.weight-pair .field{ flex:1; }
+
+.additional{
+  margin:18px 0; border:1px solid var(--border); border-radius:var(--radius-m);
+  background:var(--surface); overflow:hidden;
+}
+.additional summary{
+  padding:12px 14px; cursor:pointer; font-size:0.88rem; color:var(--text);
+  list-style:none; display:flex; align-items:center; justify-content:space-between;
+}
+.additional summary::-webkit-details-marker{ display:none; }
+.additional summary::after{ content:'+'; color:var(--text-faint); font-size:1.1rem; }
+.additional[open] summary::after{ content:'\2212'; }
+.additional .additional-body{ padding:4px 14px 16px; border-top:1px solid var(--border-soft); }
+
+.field-hint{ font-size:0.76rem; color:var(--text-faint); margin:2px 0 0; line-height:1.4; }
+.field-check{ margin-bottom:14px; }
+.check-label{ display:flex; align-items:center; gap:8px; font-size:0.86rem; color:var(--text-dim); cursor:pointer; }
+.check-label input[type="checkbox"]{ width:16px; height:16px; accent-color:var(--accent); }
+.photo-grid{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.photo-thumb{ position:relative; width:96px; height:96px; border-radius:var(--radius-m); overflow:hidden; border:1px solid var(--border); }
+.photo-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.photo-thumb .thumb-remove{
+  position:absolute; top:2px; right:2px; width:20px; height:20px; line-height:18px; text-align:center;
+  background:rgba(12,19,16,0.8); border:1px solid var(--border); color:var(--text); border-radius:50%;
+  font-size:0.75rem; padding:0; cursor:pointer;
+}
+.photo-thumb .thumb-remove:hover{ color:var(--danger); border-color:var(--danger); }
+
+.row-photos{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }
+.row-photos img{ width:96px; height:96px; object-fit:cover; border-radius:var(--radius-m); border:1px solid var(--border); cursor:zoom-in; transition:opacity .15s ease; }
+.row-photos img:hover{ opacity:0.85; }
+.photo-thumb img{ cursor:zoom-in; }
+
+.lightbox-overlay{
+  position:fixed; inset:0; background:rgba(6,10,8,0.92); z-index:1000;
+  display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.lightbox-overlay[hidden]{ display:none; }
+.date-editor-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m);
+  padding:22px; width:100%; max-width:360px;
+}
+.session-edit-dates{ margin-left:auto; margin-right:8px; }
+.lightbox-overlay img{ max-width:100%; max-height:100%; border-radius:var(--radius-m); box-shadow:0 10px 40px rgba(0,0,0,0.5); }
+.lightbox-close{
+  position:absolute; top:16px; right:16px; width:38px; height:38px; border-radius:50%;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:1.3rem; line-height:1;
+}
+.lightbox-close:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.lightbox-nav{
+  position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:1.6rem; line-height:1;
+}
+.lightbox-nav:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.lightbox-prev{ left:16px; }
+.lightbox-next{ right:16px; }
+.lightbox-counter{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:var(--text-dim); font-size:0.82rem; background:rgba(0,0,0,0.4); padding:4px 12px; border-radius:20px; }
+
+.form-actions{ display:flex; gap:10px; margin-top:20px; }
+
+/* ---------- Stats ---------- */
+.stat-strip{
+  display:flex; border:1px solid var(--border); border-radius:var(--radius-m);
+  overflow:hidden; margin-bottom:26px; background:var(--surface);
+}
+.stat-cell{ flex:1; padding:18px 16px; text-align:center; border-right:1px solid var(--border-soft); }
+.stat-cell:last-child{ border-right:none; }
+.stat-num{ font-family:'Fraunces',serif; font-weight:500; font-size:2rem; color:var(--accent-strong); line-height:1; font-variant-numeric:tabular-nums; }
+.stat-label{ font-size:0.74rem; color:var(--text-faint); margin-top:6px; }
+.stat-sub{ font-size:0.72rem; color:var(--text-dim); margin-top:2px; }
+
+h2.section-title{ font-family:'Fraunces',serif; font-weight:500; font-size:1.15rem; margin:0 0 12px; color:var(--text); }
+
+.pb-table-wrap{ overflow-x:auto; margin-bottom:30px; border:1px solid var(--border); border-radius:var(--radius-m); }
+table{ width:100%; border-collapse:collapse; font-size:0.86rem; }
+thead th{ text-align:left; font-weight:500; color:var(--text-faint); font-size:0.74rem; padding:10px 12px; border-bottom:1px solid var(--border); background:var(--surface); }
+tbody td{ padding:9px 12px; border-bottom:1px solid var(--border-soft); color:var(--text-dim); }
+tbody tr:last-child td{ border-bottom:none; }
+td.num{ font-variant-numeric:tabular-nums; color:var(--accent-strong); font-family:'Fraunces',serif; }
+
+.bar-row{ display:grid; grid-template-columns:120px 1fr 28px; align-items:center; gap:10px; margin-bottom:8px; }
+.bar-label{ font-size:0.8rem; color:var(--text-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.bar-track{ height:8px; background:var(--surface-2); border-radius:20px; overflow:hidden; }
+.bar-fill{ height:100%; background:var(--accent); border-radius:20px; }
+.bar-count{ font-size:0.78rem; color:var(--text-faint); text-align:right; }
+
+/* ---------- Wish list ---------- */
+.wish-card{
+  border:1px solid var(--border); border-radius:var(--radius-m); background:var(--surface);
+  padding:14px 16px; margin-bottom:12px;
+}
+.wish-card.achieved{ border-color:var(--accent); }
+.wish-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.wish-species{ font-weight:600; font-size:0.98rem; }
+.wish-target{ color:var(--text-dim); font-size:0.82rem; margin-top:2px; }
+.wish-notes{ color:var(--text-faint); font-size:0.8rem; margin-top:4px; font-style:italic; }
+.wish-badge{
+  font-size:0.72rem; padding:3px 10px; border-radius:20px; border:1px solid var(--border);
+  color:var(--text-faint); white-space:nowrap;
+}
+.wish-badge.achieved{ color:#1a1409; background:var(--accent); border-color:var(--accent); font-weight:600; }
+.wish-progress{ margin-top:8px; }
+.wish-remove{ margin-top:10px; }
+.wish-summary{ margin-bottom:16px; }
+.wish-progress-row{ display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-faint); margin-bottom:5px; }
+.wish-pct{ color:var(--accent-strong); font-weight:600; font-variant-numeric:tabular-nums; }
+.wish-summary-row{ display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-dim); margin-bottom:6px; }
+.wish-summary-row span:last-child{ color:var(--accent-strong); font-weight:600; }
+.pb-photo-flag{ font-size:0.8em; opacity:0.7; }
+.pb-row{ cursor:pointer; }
+.pb-detail-row td{ padding-top:12px; padding-bottom:14px; background:var(--surface); }
+.pb-detail-notes{ color:var(--text-dim); font-size:0.85rem; margin:8px 0 0; }
+.app-footer{ color:var(--text-faint); font-size:0.75rem; line-height:1.5; text-align:center; padding:30px 10px 10px; border-top:1px solid var(--border-soft); margin-top:30px; }
+
+/* ---------- Auth gate, loading, toast ---------- */
+.auth-gate{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+.auth-gate[hidden]{ display:none; }
+.auth-card{ width:100%; max-width:380px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:28px 24px; }
+.auth-error{ color:var(--danger); font-size:0.82rem; text-align:center; margin:0 0 10px; min-height:1em; }
+
+.loading-overlay{
+  position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center;
+  background:rgba(6,10,8,0.5);
+}
+.loading-overlay[hidden]{ display:none; }
+.loading-spinner{
+  width:40px; height:40px; border-radius:50%; border:3px solid var(--border);
+  border-top-color:var(--accent); animation:spin 0.8s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+.toast{
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:2100;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  padding:10px 18px; border-radius:20px; font-size:0.85rem; max-width:90vw; text-align:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.4);
+}
+.toast[hidden]{ display:none; }
+.toast-error{ border-color:var(--danger); color:var(--danger); }
+
+#app[hidden]{ display:none; }
+@media (max-width:639px){
+  header.topbar{ align-items:flex-start; }
+  #signOutBtn{ margin-left:0 !important; align-self:flex-end; }
+}
+
+datalist{ display:none; }
+
+/* ---------- Responsive ---------- */
+@media (min-width:640px){
+  header.topbar{ flex-direction:row; align-items:center; justify-content:space-between; }
+  .row-main{ grid-template-columns: 1.2fr 0.7fr 1.8fr auto; }
+}
+@media (max-width:639px){
+  nav.tabs{ gap:0; }
+  .tab{ margin-right:0; flex:1; text-align:center; padding:8px 2px; font-size:0.68rem; white-space:normal; line-height:1.25; }
+  .field-grid{ grid-template-columns:1fr; }
+  .row-main{ grid-template-columns: 1fr auto; row-gap:6px; }
+  .row-tags{ grid-column:1/2; order:3; white-space:normal; }
+  .row-actions{ grid-column:2/3; order:2; }
+  .row-weight{ order:1; }
+  .session-count{ margin-left:0; }
+  .data-actions{ margin-left:0; width:100%; }
+  .stat-strip{ flex-direction:column; }
+  .stat-cell{ border-right:none; border-bottom:1px solid var(--border-soft); }
+  .stat-cell:last-child{ border-bottom:none; }
+}
+
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+<div id="authGate" class="auth-gate">
+  <div class="auth-card">
+    <div class="brand" style="justify-content:center; margin-bottom:18px;">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 26C7 20 10 14 10 9C10 5 12 3 15 3" stroke="#d1a054" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="15" cy="3" r="1.6" fill="#d1a054"/>
+        <path d="M2 26C6 24 9 22.5 13 22.5C18 22.5 21 25 26 24" stroke="#6fae82" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+      </svg>
+      <div><span class="brand-name">Bankside</span></div>
+    </div>
+    <p class="field-hint" style="text-align:center; margin-bottom:16px;">Sign in to sync your catches, photos and wish list to your own private cloud account. First time here? Enter any email and password and tap Create account.</p>
+    <p id="authError" class="auth-error"></p>
+    <form id="authForm">
+      <div class="field">
+        <label for="auth-email">Email</label>
+        <input type="email" id="auth-email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="auth-password">Password</label>
+        <input type="password" id="auth-password" required autocomplete="current-password" minlength="6">
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="button" class="btn btn-ghost" id="authSignUpBtn">Create account</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="loadingOverlay" class="loading-overlay" hidden>
+  <div class="loading-spinner"></div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<div id="app" hidden>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 26C7 20 10 14 10 9C10 5 12 3 15 3" stroke="#d1a054" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="15" cy="3" r="1.6" fill="#d1a054"/>
+        <path d="M2 26C6 24 9 22.5 13 22.5C18 22.5 21 25 26 24" stroke="#6fae82" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+      </svg>
+      <div>
+        <span class="brand-name">Bankside</span>
+        <span class="brand-sub">UK angling log &amp; catch register</span>
+      </div>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-view="log">Catch Log</button>
+      <button class="tab" data-view="add">Add New Catch</button>
+      <button class="tab" data-view="stats">Statistics &amp; PB's</button>
+      <button class="tab" data-view="wishlist">Wish List</button>
+      <button class="tab" data-view="plans">Plan Trips</button>
+    </nav>
+    <button type="button" class="btn btn-ghost" id="signOutBtn" style="margin-left:auto;">Sign out</button>
+  </header>
+
+  <main>
+
+    <!-- ===== LOG VIEW ===== -->
+    <section id="view-log" class="view active">
+      <div class="filters">
+        <select id="filterYear"></select>
+        <select id="filterMonth"></select>
+        <select id="filterVenue"></select>
+        <select id="filterSpecies"></select>
+        <select id="sortOrder">
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
+        </select>
+        <input type="text" id="searchBox" placeholder="Search bait, rig or notes&hellip;">
+        <button class="btn" id="clearFiltersBtn" hidden>Clear filters</button>
+        <div class="data-actions">
+          <button class="btn" id="exportBtn">Export</button>
+          <button class="btn" id="importBtn">Import</button>
+          <button class="btn btn-primary" id="addNewBtn">+ Add catch</button>
+          <input type="file" id="importFile" accept="application/json" hidden>
+        </div>
+      </div>
+      <div id="resultsMeta"></div>
+      <div id="logList"></div>
+    </section>
+
+    <!-- ===== ADD / EDIT VIEW ===== -->
+    <section id="view-add" class="view">
+      <div class="view-head">
+        <h2 id="formTitle" class="serif">Add new catch</h2>
+      </div>
+      <form id="catchForm" novalidate>
+
+        <div class="field-check">
+          <label class="check-label"><input type="checkbox" id="f-legacy"> This is a historic personal best (from before you started logging)</label>
+        </div>
+        <div class="field-check">
+          <label class="check-label"><input type="checkbox" id="f-blank"> No fish were caught this session (log a blank session)</label>
+        </div>
+
+        <div class="field-grid">
+          <div class="field" id="dateFieldWrap">
+            <label for="f-date">Date</label>
+            <input type="date" id="f-date" required>
+          </div>
+          <div class="field" id="yearFieldWrap" style="display:none;">
+            <label for="f-legacyYear">Approximate year</label>
+            <input type="number" id="f-legacyYear" placeholder="e.g. 2019" min="1970" max="2100">
+          </div>
+          <div class="field" id="monthFieldWrap" style="display:none;">
+            <label for="f-legacyMonth">Month (if you remember it)</label>
+            <select id="f-legacyMonth">
+              <option value="">Not sure</option>
+            </select>
+          </div>
+          <div class="field" id="endDateFieldWrap">
+            <label for="f-endDate">End date (optional, multi-day trips)</label>
+            <input type="date" id="f-endDate">
+          </div>
+        </div>
+        <div class="field-grid">
+          <div class="field" id="timeFieldWrap">
+            <label for="f-time">Time (optional)</label>
+            <input type="time" id="f-time">
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="f-venue">Venue / water name</label>
+            <input type="text" id="f-venue" list="venueList" placeholder="e.g. Latchetts Lake" required>
+            <datalist id="venueList"></datalist>
+          </div>
+          <div class="field">
+            <label for="f-lake">Lake / section name</label>
+            <input type="text" id="f-lake" placeholder="e.g. Species Lake">
+          </div>
+        </div>
+
+        <div class="field-grid" id="speciesRowWrap">
+          <div class="field">
+            <label for="f-species">Species</label>
+            <select id="f-species" required>
+              <option value="" disabled selected>Choose species&hellip;</option>
+            </select>
+          </div>
+          <div class="field" id="speciesDetailWrap">
+            <label for="f-speciesDetail">Species detail (variant / exact name)</label>
+            <input type="text" id="f-speciesDetail" placeholder="e.g. Redtail Catfish">
+          </div>
+        </div>
+
+        <div class="field" id="weightFieldWrap">
+          <label>Weight</label>
+          <div class="weight-pair">
+            <input type="number" id="f-weightLb" placeholder="lb" min="0" step="1">
+            <input type="number" id="f-weightOz" placeholder="oz" min="0" max="15" step="1">
+          </div>
+        </div>
+
+        <div class="field" id="quantityWrap">
+          <label for="f-quantity">Number of fish (no individual weights)</label>
+          <input type="number" id="f-quantity" min="1" step="1" value="1">
+          <p class="field-hint">Logging several identical catches at once &mdash; e.g. 40 roach on the same bait and rig? Raise this number and they'll be saved as one grouped entry ("40&times; Roach") instead of 40 separate rows. If you enter a weight above, it's kept for one fish and the rest are grouped separately as unweighed.</p>
+        </div>
+
+        <div class="field" id="quantityEditWrap" style="display:none;">
+          <label for="f-quantityEdit">Number of fish in this group</label>
+          <input type="number" id="f-quantityEdit" min="1" step="1" value="1">
+        </div>
+
+        <div class="field-grid" id="baitRigRowWrap">
+          <div class="field">
+            <label for="f-bait">Main bait</label>
+            <input type="text" id="f-bait" placeholder="e.g. Mainline Cell Boilies &amp; Sweetcorn">
+          </div>
+          <div class="field">
+            <label for="f-rig">Rig / presentation</label>
+            <input type="text" id="f-rig" list="rigList" placeholder="Choose or type your own&hellip;">
+            <datalist id="rigList">
+              <option value="Method Feeder"><option value="Solid Bag"><option value="Spinner Rig">
+              <option value="Chod"><option value="Hair Rig"><option value="Freeline">
+              <option value="Inline"><option value="Ronnie Rig"><option value="Zig"><option value="Lead Clip">
+            </datalist>
+          </div>
+        </div>
+
+        <details class="additional">
+          <summary>Additional details</summary>
+          <div class="additional-body">
+            <div class="field-grid">
+              <div class="field">
+                <label for="f-swim">Swim / peg number</label>
+                <input type="text" id="f-swim" placeholder="e.g. 16">
+              </div>
+              <div class="field">
+                <label for="f-distance">Distance / wraps</label>
+                <input type="text" id="f-distance" placeholder="e.g. 14 wraps / 42 yards">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-hookbait">Hookbait &amp; size</label>
+              <input type="text" id="f-hookbait" placeholder="e.g. 12mm Yellow Pop-up">
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f-airTemp">Air temp (&deg;C)</label>
+                <input type="number" id="f-airTemp" placeholder="e.g. 14">
+              </div>
+              <div class="field">
+                <label for="f-wind">Wind direction</label>
+                <input type="text" id="f-wind" placeholder="e.g. SW, force 3">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-pressure">Barometric pressure (mb)</label>
+              <input type="number" id="f-pressure" placeholder="e.g. 1015">
+            </div>
+            <div class="field" id="weatherFetchWrap">
+              <button type="button" class="btn" id="fetchWeatherBtn">Look up real weather for this date</button>
+              <p class="field-hint">Uses your device's current location and a free public weather record (Open-Meteo) for the selected date &mdash; not a guess. Only works when this page is open online (not as a local file) and location access is allowed, and it reads your <em>current</em> location, so it's most accurate when used bankside. Nothing is filled in unless the lookup succeeds.</p>
+              <p class="field-hint" id="weatherFetchStatus"></p>
+            </div>
+            <div class="field">
+              <label for="f-photo">Photos</label>
+              <input type="file" id="f-photo" accept="image/*" multiple>
+              <p class="field-hint">Add as many as you like for this fish &mdash; tap any thumbnail (or the photo in the log) to view it full-screen and swipe through the rest.</p>
+              <div id="photoPreview" class="photo-grid"></div>
+            </div>
+            <div class="field">
+              <label for="f-notes">General notes / watercraft observations</label>
+              <textarea id="f-notes" placeholder="Liners overnight, showed at first light over gravel&hellip;"></textarea>
+            </div>
+          </div>
+        </details>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Save catch</button>
+          <button type="button" class="btn btn-ghost" id="cancelEdit" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== STATS VIEW ===== -->
+    <section id="view-stats" class="view">
+      <div class="filters">
+        <select id="statsFilterYear"></select>
+        <select id="statsFilterVenue"></select>
+        <button class="btn" id="statsClearBtn" hidden>Clear</button>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-cell">
+          <div class="stat-num" id="statTotal">0</div>
+          <div class="stat-label">Total catches</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="statPB">&mdash;</div>
+          <div class="stat-label">Overall PB</div>
+          <div class="stat-sub" id="statPBWho"></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="statVenues">0</div>
+          <div class="stat-label">Venues fished</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Personal bests by species</h2>
+      <button class="btn" id="addHistoricBtn" style="margin-bottom:12px;">+ Add a historic PB</button>
+      <div class="pb-table-wrap">
+        <table>
+          <thead><tr><th>Species</th><th>Weight</th><th>Venue</th><th>Date</th></tr></thead>
+          <tbody id="pbTableBody"></tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Catches by species</h2>
+      <div id="speciesBreakdown"></div>
+
+      <h2 class="section-title">Catches by venue</h2>
+      <div id="venueBreakdown"></div>
+    </section>
+
+    <!-- ===== WISH LIST VIEW ===== -->
+    <section id="view-wishlist" class="view">
+      <h2 class="section-title">Add a target</h2>
+      <form id="wishForm">
+        <div class="field-grid">
+          <div class="field">
+            <label for="wish-species">Species</label>
+            <select id="wish-species" required>
+              <option value="" disabled selected>Choose species&hellip;</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="wish-detail">Detail (optional)</label>
+            <input type="text" id="wish-detail" placeholder="e.g. from a day-ticket water">
+          </div>
+        </div>
+        <div class="field">
+          <label>Target weight (optional &mdash; leave blank to just aim to catch one)</label>
+          <div class="weight-pair">
+            <input type="number" id="wish-weightLb" placeholder="lb" min="0" step="1">
+            <input type="number" id="wish-weightOz" placeholder="oz" min="0" max="15" step="1">
+          </div>
+        </div>
+        <div class="field">
+          <label for="wish-notes">Notes (optional)</label>
+          <input type="text" id="wish-notes" placeholder="e.g. specimen lake near home">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Add to wish list</button>
+        </div>
+      </form>
+
+      <h2 class="section-title" style="margin-top:26px;">Targets</h2>
+      <div id="wishSummary" class="wish-summary"></div>
+      <div id="wishList"></div>
+    </section>
+
+    <!-- ===== PLAN TRIPS VIEW ===== -->
+    <section id="view-plans" class="view">
+      <h2 class="section-title">Add a trip idea</h2>
+      <form id="planForm">
+        <div class="field">
+          <label for="plan-venue">Venue name</label>
+          <input type="text" id="plan-venue" placeholder="e.g. Linear Fisheries" required>
+        </div>
+        <div class="field">
+          <label for="plan-description">Description</label>
+          <textarea id="plan-description" placeholder="Why you want to fish it, what you've heard, day-ticket info, target species&hellip;"></textarea>
+        </div>
+        <div class="field">
+          <label for="plan-date">Target date (optional)</label>
+          <input type="date" id="plan-date">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Add to plan list</button>
+        </div>
+      </form>
+
+      <h2 class="section-title" style="margin-top:26px;">Trip ideas</h2>
+      <div id="planList"></div>
+    </section>
+
+  </main>
+  <footer class="app-footer">This is a self-contained file &mdash; save it anywhere and reopen it any time, in any browser, with no account or internet connection needed. Your log is stored on this device only, so use Export from the Catch Log tab to back it up or move it elsewhere.</footer>
+</div>
+
+<div id="lightbox" class="lightbox-overlay" hidden>
+  <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
+  <button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#8249;</button>
+  <img id="lightboxImg" src="" alt="Enlarged catch photo">
+  <button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Next photo">&#8250;</button>
+  <div id="lightboxCounter" class="lightbox-counter"></div>
+</div>
+
+<div id="dateEditorOverlay" class="lightbox-overlay" hidden>
+  <div class="date-editor-card">
+    <h3 class="serif" style="margin:0 0 4px;">Edit trip dates</h3>
+    <p class="field-hint" style="margin:0 0 14px;">Updates the date for every fish logged on this trip in one go.</p>
+    <div class="field">
+      <label for="de-start">Start date</label>
+      <input type="date" id="de-start">
+    </div>
+    <div class="field">
+      <label for="de-end">End date (optional)</label>
+      <input type="date" id="de-end">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" id="de-save">Save dates</button>
+      <button type="button" class="btn btn-ghost" id="de-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   BANKSIDE — UK ANGLING LOG & CATCH REGISTER
+   Single-file app: seed data + state + rendering + persistence
+   ============================================================ */
+
+/* ----- Seed data builder (parsed from original session notes) ----- */
+let seedIdCounter = 1;
+function mk(date, venue, lake, swim, species, speciesDetail, rig, bait, count, weights, extraNote, endDate) {
+  weights = weights || [];
+  extraNote = extraNote || '';
+  const nextId = () => 'seed-' + (seedIdCounter++);
+  const base = {
+    date: date, endDate: endDate || null, dateApprox: false, monthUnknown: false, isBlank: false,
+    time: '', venue: venue, lake: lake || '', swim: swim || '',
+    species: species, speciesDetail: speciesDetail || '',
+    bait: bait || '', rig: rig || '',
+    distance: '', hookbait: '', airTemp: '', wind: '', pressure: '', photos: []
+  };
+
+  // Every fish individually weighed -> keep as separate rows, one per weight.
+  if (weights.length === count && count > 0) {
+    return weights.map(w => Object.assign({ id: nextId() }, base, { weightLb: w[0], weightOz: w[1], quantity: 1, notes: extraNote }));
+  }
+  // Exactly one of the group was weighed -> that one fish stands alone, the rest are
+  // grouped together as a single unweighed catch of (count - 1).
+  if (weights.length === 1 && count > 1) {
+    const rec1 = Object.assign({ id: nextId() }, base, { weightLb: weights[0][0], weightOz: weights[0][1], quantity: 1, notes: extraNote });
+    const rest = Object.assign({ id: nextId() }, base, {
+      weightLb: null, weightOz: null, quantity: count - 1,
+      notes: (extraNote ? extraNote + ' ' : '') + 'The rest of this catch were not individually weighed.'
+    });
+    return [rec1, rest];
+  }
+  // Nothing weighed and more than one caught -> a single grouped record (e.g. "40x Roach").
+  if (count > 1) {
+    return [Object.assign({ id: nextId() }, base, { weightLb: null, weightOz: null, quantity: count, notes: extraNote })];
+  }
+  // Single fish, weighed or not.
+  const w = weights[0] || null;
+  return [Object.assign({ id: nextId() }, base, { weightLb: w ? w[0] : null, weightOz: w ? w[1] : null, quantity: 1, notes: extraNote })];
+}
+
+function mkBlank(date, venue, lake, swim, endDate, notes) {
+  return [{
+    id: 'seed-' + (seedIdCounter++),
+    date: date, endDate: endDate || null, dateApprox: false, monthUnknown: false, isBlank: true,
+    time: '', venue: venue, lake: lake || '', swim: swim || '',
+    species: '', speciesDetail: '', weightLb: null, weightOz: null, quantity: 1,
+    bait: '', rig: '', distance: '', hookbait: '', airTemp: '', wind: '', pressure: '', photos: [],
+    notes: notes || ''
+  }];
+}
+
+function buildSeedDataCore() {
+  let d = [];
+  d = d.concat(mk('2026-02-03','Jurassic Mountains','','16','Redtail Catfish','','Lead Weight','Chicken Hearts',2,[[40,0]]));
+
+  d = d.concat(mk('2026-02-04','Jurassic Mountains','','1','Redtail Catfish','','Lead Weight','Chicken Hearts',3,[[30,0],[35,0],[45,0]]));
+  d = d.concat(mk('2026-02-04','Jurassic Mountains','','1','Redtail Catfish','','Method Spring','Boilie',1,[[55,0]]));
+  d = d.concat(mk('2026-02-04','Jurassic Mountains','','1','Tambaqui','','Lead Weight','Chicken Hearts',1,[[55,0]]));
+
+  d = d.concat(mk('2026-02-05','Jurassic Mountains','','6','Siamese Carp','','Lead Weight','Chicken Hearts',1,[[120,0]]));
+
+  d = d.concat(mk('2026-02-06','Jurassic Mountains','','14','Redtail Catfish','','Lead Weight','Chicken Hearts',1,[[45,0]]));
+
+  d = d.concat(mk('2026-02-07','Jurassic Mountains','','9','Chao Phraya Catfish','','Inline Float','Chicken Heart',1,[[60,0]]));
+
+  d = d.concat(mk('2026-02-08','Jurassic Mountains','','16','Redtail Catfish','','Method Spring','Boilie',1,[[35,0]]));
+  d = d.concat(mk('2026-02-08','Jurassic Mountains','','16','Arapaima','','Lead Weight','Chicken Hearts',1,[[167,0]]));
+
+  d = d.concat(mkBlank('2026-02-09','Jurassic Mountains','','7',null,''));
+  d = d.concat(mkBlank('2026-02-10','Jurassic Mountains','','7',null,''));
+
+  d = d.concat(mk('2026-02-11','Jurassic Mountains','Species Lake','2','Ripsaw Catfish','','Lead Weight','Cork Ball w/ Paste',1,[[9,0]]));
+  d = d.concat(mk('2026-02-11','Jurassic Mountains','Species Lake','2','Grass Carp','','Lead Weight','Cork Ball w/ Paste',1,[[7,0]]));
+  d = d.concat(mk('2026-02-11','Jurassic Mountains','Species Lake','2','Common Carp','','Lead Weight','Cork Ball w/ Paste',1,[[8,0]]));
+  d = d.concat(mk('2026-02-11','Jurassic Mountains','Species Lake','2','Black Minnow Shark Carp','','Lead Weight','Cork Ball w/ Paste',1,[[7,0]]));
+
+  d = d.concat(mk('2026-02-12','Jurassic Mountains','','1','Siamese Carp','','Method Spring','Boilie',1,[[105,0]]));
+  d = d.concat(mk('2026-02-12','Jurassic Mountains','','1','Redtail Catfish','','Lead Weight','Chicken Hearts',2,[[70,0],[30,0]]));
+  d = d.concat(mk('2026-02-12','Jurassic Mountains','','1','Tambaqui','','Method Spring','Boilie',1,[[45,0]]));
+  d = d.concat(mk('2026-02-12','Jurassic Mountains','','1','Asian Redtail Catfish','','Lead Weight','Chicken Hearts',1,[[15,0]]));
+
+  d = d.concat(mkBlank('2026-02-23','Frogmore Lake','','3',null,''));
+
+  d = d.concat(mk('2026-03-01','Westmoreland Park','','','Chub','','Method Feeder','Fake Corn',1,[]));
+
+  d = d.concat(mkBlank('2026-03-02','River Valley','','',null,''));
+
+  d = d.concat(mk('2026-04-12','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Hearts',1,[]));
+  d = d.concat(mk('2026-04-12','Latchetts Lake','','','Common Carp','','Lead Weight','Chicken Hearts',1,[]));
+
+  d = d.concat(mkBlank('2026-04-18','Farlows Lake','','2','2026-04-19',''));
+
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Common Carp','','Lead Weight','Pop-up',2,[]));
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Bream','','Method Feeder','Fake Corn',2,[]));
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Ghost Carp','','Method Feeder','Fake Corn',2,[]));
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Mirror Carp','','Method Feeder','Fake Corn',4,[]));
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Common Carp','','Method Feeder','Fake Corn',6,[]));
+  d = d.concat(mk('2026-04-27','Gold Valley','','','Mirror Carp','','Lead Weight','Pop-up',2,[]));
+
+  d = d.concat(mkBlank('2026-05-04','Farlows Lake','','2','2026-05-05',''));
+  d = d.concat(mkBlank('2026-05-09','Savernake Park','','',null,''));
+
+  d = d.concat(mk('2026-05-11','Latchetts Lake','','','Common Carp','','Lead Weight','Pop-up',1,[]));
+  d = d.concat(mk('2026-05-11','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Heart',2,[]));
+  d = d.concat(mk('2026-05-11','Latchetts Lake','','','Mirror Carp','','Lead Weight','Chicken Heart',1,[]));
+  d = d.concat(mk('2026-05-11','Latchetts Lake','','','Common Carp','','Lead Weight','Chicken Heart',3,[]));
+
+  d = d.concat(mk('2026-05-18','Pondwood','','','Catfish','','Lead Weight','Chicken Heart',3,[]));
+
+  d = d.concat(mkBlank('2026-05-29','Seven Lakes','','','2026-05-31',''));
+  d = d.concat(mkBlank('2026-06-06','Seven Lakes','','','2026-06-07',''));
+  d = d.concat(mkBlank('2026-06-15','Tar Farm','','4',null,''));
+  d = d.concat(mkBlank('2026-06-21','River Thames','','',null,''));
+
+  d = d.concat(mk('2026-06-22','Farleymoor','','','Common Carp','','Inline Lead','Fake Corn',1,[]));
+  d = d.concat(mk('2026-06-22','Farleymoor','','','Common Carp','','Inline Lead','Fake Pink Maize',1,[]));
+
+  d = d.concat(mkBlank('2026-06-28','Frogmore','','','2026-06-29',''));
+
+  d = d.concat(mk('2026-07-04','Holme Grange','','','Common Carp','','Solid Bag','Wafter',2,[],'',  '2026-07-05'));
+  d = d.concat(mk('2026-07-04','Holme Grange','','','Common Carp','','Ronnie Rig','Wafter',2,[],'','2026-07-05'));
+  d = d.concat(mk('2026-07-04','Holme Grange','','','Mirror Carp','','Solid Bag','Pink Maize',1,[],'','2026-07-05'));
+
+  d = d.concat(mkBlank('2025-07-24','Farlows Lake','','1','2025-07-25','Date recorded as 24-25/07/25 in the original notes; sits chronologically among 2026 sessions, so may be a typo for 2026.'));
+
+  d = d.concat(mk('2026-07-28','Blackwater','','','Minnow','','Float Fishing','Maggots',1,[]));
+  d = d.concat(mk('2026-07-28','Blackwater','','','Chub','','Float Fishing','Maggots',5,[]));
+  d = d.concat(mk('2026-07-28','Blackwater','','','Roach','','Float Fishing','Maggots',3,[]));
+  d = d.concat(mk('2026-07-28','Blackwater','','','Perch','','Float Fishing','Maggots',4,[]));
+  d = d.concat(mk('2026-07-28','Blackwater','','','Gudgeon','','Float Fishing','Maggots',2,[]));
+  d = d.concat(mk('2026-07-28','Savernake','','','Common Carp','','Float Fishing','Maggots',8,[]));
+  d = d.concat(mk('2026-07-28','Savernake','','','Mirror Carp','','Float Fishing','Maggots',4,[]));
+
+  d = d.concat(mk('2026-07-31','Stillwater Front Lake','','','Bream','','Lead Clip','15mm Wafter',2,[],'','2026-08-01'));
+  d = d.concat(mk('2026-07-31','Stillwater Front Lake','','','Bream','','Spinner Rig','15mm Wafter',1,[],'','2026-08-01'));
+
+  d = d.concat(mk('2026-08-04','The Cut / Savernake','','','Gudgeon','','Float Fishing','Maggots',1,[]));
+  d = d.concat(mk('2026-08-04','The Cut / Savernake','','','Common Carp','','Float Fishing','Maggots',3,[]));
+
+  d = d.concat(mk('2026-08-07','Summer Pit','','','Common Carp','','Solid Bag','16mm topped with corn',1,[],'','2026-08-08'));
+  d = d.concat(mk('2026-08-07','Summer Pit','','','Mirror Carp','','Solid Bag','15mm Wafter',3,[],'','2026-08-08'));
+
+  d = d.concat(mk('2026-08-14','Horseshoe Lake','','','Common Carp','','Solid Bag','15mm Wafter',1,[[19,9]],'','2026-08-15'));
+  d = d.concat(mk('2026-08-14','Horseshoe Lake','','','Tench','','Solid Bag','15mm Wafter',1,[],'','2026-08-15'));
+  d = d.concat(mk('2026-08-14','Horseshoe Lake','','','Common Carp','','Spinner Rig','15mm Wafter',1,[[19,4]],'','2026-08-15'));
+
+  d = d.concat(mkBlank('2026-08-21','Stillwater Front Lake','','',null,''));
+
+  d = d.concat(mk('2026-08-29','Willow Park Big Lake','','','Mirror Carp','','Spinner Rig','15mm Wafter',2,[[10,4],[22,4]],'','2026-08-31'));
+
+  d = d.concat(mk('2026-09-05','Badshot Lea Big Pond','','','Mirror Carp','','Spinner Rig','15mm Pango Wafter',2,[[12,11],[16,15]],'','2026-09-06'));
+  d = d.concat(mk('2026-09-05','Badshot Lea Big Pond','','','Bream','','Spinner Rig','15mm Pango Wafter',1,[[10,5]],'','2026-09-06'));
+  d = d.concat(mk('2026-09-05','Badshot Lea Big Pond','','','Common Carp','','Spinner Rig','15mm Pango Wafter',2,[[21,8],[23,13]],'','2026-09-06'));
+  d = d.concat(mk('2026-09-05','Badshot Lea Big Pond','','','Bream','','Hair Rig','15mm Cell Wafter',1,[],'','2026-09-06'));
+  d = d.concat(mk('2026-09-05','Badshot Lea Big Pond','','','Mirror Carp','','Hair Rig','15mm Cell Wafter',1,[[24,5]],'','2026-09-06'));
+
+  d = d.concat(mkBlank('2026-09-09','River Blackwater','','',null,''));
+
+  d = d.concat(mk('2026-09-12','Latchetts Lake','','','Ghost Common Carp','','','Chicken Hearts',1,[[8,12]],'','2026-09-13'));
+  d = d.concat(mk('2026-09-12','Latchetts Lake','','','Catfish','','','Chorizo',4,[[24,10]],'','2026-09-13'));
+  d = d.concat(mk('2026-09-12','Latchetts Lake','','','Common Carp','','','Chicken Hearts',1,[],'','2026-09-13'));
+  d = d.concat(mk('2026-09-12','Latchetts Lake','','','Catfish','','','Chicken Hearts',1,[],'','2026-09-13'));
+
+  return d.map(r => Object.assign(r, { seedBatch: 'core-2026' }));
+}
+
+function buildSeedDataHistoric() {
+  let d = [];
+
+  /* ---- 2025 log ---- */
+  d = d.concat(mk('2025-06-21','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Hearts',3,[[48,0],[28,0],[24,0]],'','2025-06-22'));
+  d = d.concat(mk('2025-06-21','Latchetts Lake','','','Common Carp','','Lead Weight','Spam',1,[],'','2025-06-22'));
+  d = d.concat(mk('2025-06-21','Latchetts Lake','','','Common Carp','','Lead Weight','Chicken Hearts',2,[],'','2025-06-22'));
+  d = d.concat(mk('2025-06-21','Latchetts Lake','','','Common Carp','','Lead Weight','Boilie',1,[],'','2025-06-22'));
+
+  d = d.concat(mkBlank('2025-06-28','River Blackwater / Swan Lake','','',null,''));
+  d = d.concat(mkBlank('2025-07-07','Swan Lake / River Blackwater / Basingstoke Canal','','',null,''));
+  d = d.concat(mkBlank('2025-07-08','South Lake','','','2025-07-09',''));
+
+  d = d.concat(mk('2025-07-16','Pondwood','','','Catfish','','Lead Weight','Chicken Hearts',1,[]));
+
+  d = d.concat(mkBlank('2025-07-19','Basingstoke Canal','','',null,''));
+
+  d = d.concat(mk('2025-08-17','Finch Farm','','','Catfish','','Lead Weight','Chicken Hearts',1,[[15,0]],'','2025-08-18'));
+  d = d.concat(mk('2025-08-17','Finch Farm','','','Perch','','Float Fishing','Maggots',2,[],'','2025-08-18'));
+  d = d.concat(mk('2025-08-17','Finch Farm','','','Pumpkinseed','','Float Fishing','Maggots',1,[],'','2025-08-18'));
+  d = d.concat(mk('2025-08-17','Finch Farm','','','Hybrid','','Float Fishing','Maggots',2,[],'','2025-08-18'));
+
+  d = d.concat(mk('2025-08-22','Latchetts Lake','','','Common Carp','','Lead Weight','Boilie',1,[],'','2025-08-23'));
+  d = d.concat(mk('2025-08-22','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Hearts',2,[[34,0]],'','2025-08-23'));
+
+  d = d.concat(mk('2025-09-08','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Hearts',3,[]));
+  d = d.concat(mk('2025-09-08','Latchetts Lake','','','Common Carp','','Lead Weight','Chicken Hearts',4,[]));
+  d = d.concat(mk('2025-09-08','Latchetts Lake','','','Mirror Carp','','Lead Weight','Chicken Hearts',1,[]));
+
+  d = d.concat(mkBlank('2025-09-09','Basingstoke Canal','','',null,''));
+
+  d = d.concat(mk('2025-09-22','Beaver Fishery','','','Catfish','','Lead Weight','Chicken Hearts',1,[[31,0]]));
+
+  d = d.concat(mkBlank('2025-10-05','Grand Union Canal','','',null,''));
+  d = d.concat(mkBlank('2025-10-06','Stillwater Back Lake','','',null,''));
+  d = d.concat(mkBlank('2025-10-12','Tar Farm','','6',null,''));
+
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Roach','','Float Fishing','Maggots',2,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Pumpkinseed','','Float Fishing','Maggots',30,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Hybrid','','Float Fishing','Maggots',3,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','F1 Carp','','Float Fishing','Maggots',1,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Bream','','Float Fishing','Maggots',1,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Perch','','Float Fishing','Maggots',3,[]));
+  d = d.concat(mk('2025-11-17','Finch Farm','','','Mirror Carp','','Method Feeder','Sweetcorn',1,[]));
+
+  d = d.concat(mkBlank('2025-11-23','Odiham Canal','','',null,''));
+  d = d.concat(mkBlank('2025-12-14','Grand Union Canal','','',null,''));
+
+  /* ---- 2024 log ---- */
+  d = d.concat(mk('2024-02-04','Jurassic Mountains','','12','Siamese Carp','','Lead Weight','Boilies',1,[[90,0]]));
+  d = d.concat(mk('2024-02-04','Jurassic Mountains','','12','Siamese Carp','','Lead Weight','Boilies',1,[[55,0]]));
+
+  d = d.concat(mkBlank('2024-02-05','Jurassic Mountains','','9',null,''));
+
+  d = d.concat(mk('2024-02-06','Jurassic Mountains','','2','Siamese Carp','','Lead Weight','Boilies',1,[[35,0]]));
+
+  d = d.concat(mk('2024-02-07','Jurassic Mountains','Species Lake','','Rohu','','Method Feeder','Sweetcorn',1,[[8,0]]));
+
+  d = d.concat(mk('2024-02-08','Jurassic Mountains','','16','Pacu','','Lead Weight','Chicken Heart',1,[[10,0]]));
+  d = d.concat(mk('2024-02-08','Jurassic Mountains','','16','Siamese Carp','','Lead Weight','Boilies',1,[[35,0]]));
+  d = d.concat(mk('2024-02-08','Jurassic Mountains','','16','Redtail Catfish','','Lead Weight','Chicken Heart',1,[[50,0]]));
+
+  d = d.concat(mk('2024-02-09','Jurassic Mountains','','5','Chao Phraya Catfish','','Lead Weight','Chicken Heart',1,[[50,0]]));
+
+  d = d.concat(mk('2024-02-15','Finch Farm','','','Catfish','','Lead Weight','Spam',1,[[14,0]]));
+
+  d = d.concat(mk('2024-02-19','Finch Farm','','','Catfish','','Lead Weight','Spam',1,[[14,5]]));
+  d = d.concat(mk('2024-02-19','Finch Farm','','','Catfish','','Lead Weight','Chicken Heart',1,[[21,0]]));
+
+  d = d.concat(mkBlank('2024-03-04','South Hill Park','','',null,''));
+  d = d.concat(mkBlank('2024-03-29','South Hill Park','','',null,''));
+  d = d.concat(mkBlank('2024-04-01','South Hill Park','','',null,''));
+  d = d.concat(mkBlank('2024-04-09','Watmore / Basingstoke Canal','','',null,''));
+  d = d.concat(mkBlank('2024-05-10','River Thames','','',null,''));
+
+  d = d.concat(mk('2024-05-14','Gold Valley','','','Common Carp','','Method Feeder','Pepperami',3,[]));
+  d = d.concat(mk('2024-05-14','Gold Valley','','','Ghost Common Carp','','Method Feeder','Pepperami',2,[]));
+  d = d.concat(mk('2024-05-14','Gold Valley','','','Common Carp','','Method Feeder','Sweetcorn',7,[]));
+  d = d.concat(mk('2024-05-14','Gold Valley','','','Ghost Common Carp','','Method Feeder','Sweetcorn',1,[]));
+  d = d.concat(mk('2024-05-14','Gold Valley','','','Mirror Carp','','Method Feeder','Sweetcorn',1,[]));
+
+  d = d.concat(mk('2024-05-21','Royal Berks','','','Common Carp','','Method Feeder','Sweetcorn',6,[]));
+  d = d.concat(mk('2024-05-21','Royal Berks','','','Ghost Common Carp','','Method Feeder','Sweetcorn',1,[]));
+  d = d.concat(mk('2024-05-21','Royal Berks','','','Mirror Carp','','Method Feeder','Sweetcorn',1,[]));
+
+  d = d.concat(mk('2024-07-07','South Hill Park','','','Common Carp','','Inline Lead','Floating Corn',1,[]));
+
+  d = d.concat(mk('2024-07-17','Linear Fisheries B2','','','Mirror Carp','','Inline Lead','15mm Wafter',4,[[14,8],[19,2],[29,0],[24,6]],'','2024-07-18'));
+
+  d = d.concat(mkBlank('2024-07-19','South Lake','','','2024-07-20',''));
+
+  d = d.concat(mk('2024-08-01','Finch Farm','','','Mirror Carp','','Method Feeder','Sweetcorn',1,[],'','2024-08-02'));
+  d = d.concat(mk('2024-08-01','Finch Farm','','','Bream','','Method Feeder','Sweetcorn',1,[],'','2024-08-02'));
+  d = d.concat(mk('2024-08-01','Finch Farm','','','Common Carp','','Method Feeder','Sweetcorn',1,[],'','2024-08-02'));
+  d = d.concat(mk('2024-08-01','Finch Farm','','','Catfish','','Inline Lead','Chicken Hearts',1,[[18,13]],'','2024-08-02'));
+
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Mirror Carp','','Lead Weight','Fake Corn',2,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Common Carp','','Lead Weight','Fake Corn',1,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Common Carp','','Method Feeder','Fake Corn',2,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Common Carp','','Lead Weight','Boilie',2,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Mirror Carp','','Lead Weight','Boilie',3,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Mirror Carp','','Lead Weight','Pepperoni',1,[]));
+  d = d.concat(mk('2024-08-22','Gold Valley','','','Common Carp','','Lead Weight','Pepperami',1,[]));
+
+  d = d.concat(mk('2024-08-28','Gold Valley','','','Mirror Carp','','Lead Weight','Boilie',2,[]));
+  d = d.concat(mk('2024-08-28','Gold Valley','','','Common Carp','','Lead Weight','Boilie',5,[]));
+
+  d = d.concat(mk('2024-09-02','Basingstoke Canal','','','Pike','','Lure Fishing','Spinner',1,[]));
+
+  d = d.concat(mk('2024-09-03','Pondwood','','','Catfish','','Lead Weight','Chicken Hearts',3,[]));
+  d = d.concat(mk('2024-09-03','Pondwood','','','Common Carp','','Lead Weight','Chicken Hearts',1,[]));
+
+  d = d.concat(mk('2024-09-11','Pondwood','','','Common Carp','','Lead Weight','Chicken Hearts',1,[]));
+
+  d = d.concat(mk('2024-09-24','Latchetts Lake','','','Common Carp','','Lead Weight','Boilie',7,[],'','2024-09-25'));
+  d = d.concat(mk('2024-09-24','Latchetts Lake','','','Catfish','','Lead Weight','Chicken Hearts',2,[[35,4],[26,8]],'','2024-09-25'));
+  d = d.concat(mk('2024-09-24','Latchetts Lake','','','Mirror Carp','','Lead Weight','Boilie',1,[],'','2024-09-25'));
+  d = d.concat(mk('2024-09-24','Latchetts Lake','','','Mirror Carp','','Lead Weight','Chicken Hearts',1,[],'','2024-09-25'));
+
+  d = d.concat(mkBlank('2024-10-06','Basingstoke Canal','','',null,''));
+  d = d.concat(mkBlank('2024-10-13','River Loddon','','',null,''));
+  d = d.concat(mkBlank('2024-10-14','River Loddon','','',null,''));
+
+  d = d.concat(mk('2024-10-18','Basingstoke Canal / Pondwood','','','Catfish','','Lead Weight','Chicken Hearts',3,[],'','2024-10-19'));
+
+  d = d.concat(mk('2024-11-02','Gold Valley','','','Mirror Carp','','Method Feeder','Fake Sweetcorn',1,[]));
+  d = d.concat(mk('2024-11-02','Gold Valley','','','Common Carp','','Method Feeder','Fake Sweetcorn',1,[]));
+
+  d = d.concat(mk('2024-11-13','Shallowbrook','','','Pike','','Float Ledger','Roach (deadbait)',2,[]));
+  d = d.concat(mk('2024-11-13','Shallowbrook','','','Pike','','Lead Weight','Lamprey',1,[]));
+  d = d.concat(mk('2024-11-13','Shallowbrook','','','Pike','','Float Ledger','Lamprey',1,[]));
+
+  d = d.concat(mkBlank('2024-11-14','Billingford Lakes / River Wensum','','',null,''));
+  d = d.concat(mkBlank('2024-11-29','Basingstoke Canal','','',null,''));
+
+  return d.map(r => Object.assign(r, { seedBatch: 'historic-2025-2024' }));
+}
+
+/* ----- Constants ----- */
+const UK_SPECIES = ['Mirror Carp','Common Carp','Leather Carp','Grass Carp','Catfish','Pike','Tench','Bream','Barbel','Chub','Roach','Rudd','Perch','Crucian','Gudgeon','Minnow','Ghost Carp','Ghost Common Carp','F1 Carp','Hybrid','Pumpkinseed','Sturgeon'];
+const EXOTIC_SPECIES = ['Redtail Catfish','Ripsaw Catfish','Asian Redtail Catfish','Chao Phraya Catfish','Siamese Carp','Tambaqui','Arapaima','Black Minnow Shark Carp','Rohu','Pacu'];
+const EXTRA_VENUES = ['The Cut','Savernake Park'];
+const SPECIES_LIST = UK_SPECIES.concat(EXOTIC_SPECIES).concat(['Other']);
+
+/* ==================================================================
+   SUPABASE CONFIG
+   Paste your Project URL and anon public key here (Supabase dashboard
+   -> Settings -> API). Both are safe to expose in client-side code;
+   Row Level Security is what actually protects your data.
+   ================================================================== */
+  const SUPABASE_URL = 'https://jytdhynausoolunbdgni.supabase.co';
+   const SUPABASE_ANON_KEY = 'sb_publishable_4XrGhmxrJ2TvOQusdtQjaw_L0rinhJf';
+
+const SUPABASE_CONFIGURED = SUPABASE_URL.indexOf('PASTE_') !== 0 && SUPABASE_ANON_KEY.indexOf('PASTE_') !== 0;
+let supabaseClient = null;
+if (SUPABASE_CONFIGURED && window.supabase) {
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+}
+
+const PHOTO_BUCKET = 'catch-photos';
+const LOCAL_BACKUP_KEY = 'bankside_catches_v1';       // old localStorage catches (migration source only)
+const LOCAL_WISHLIST_KEY = 'bankside_wishlist_v1';    // old localStorage wishlist (migration source only)
+const LOCAL_PLANS_KEY = 'bankside_plans_v1';          // old localStorage plans (migration source only)
+
+/* ----- State ----- */
+let catches = [];
+let editingId = null;
+let formPhotos = [];
+let currentView = 'log';
+let currentUser = null;
+
+/* ----- Loading / error UI ----- */
+let busyCount = 0;
+function setBusy(isBusy) {
+  busyCount = Math.max(0, busyCount + (isBusy ? 1 : -1));
+  const el = document.getElementById('loadingOverlay');
+  if (el) el.hidden = busyCount === 0;
+}
+function showToast(message, isError) {
+  const el = document.getElementById('toast');
+  if (!el) { if (isError) alert(message); return; }
+  el.textContent = message;
+  el.className = 'toast' + (isError ? ' toast-error' : '');
+  el.hidden = false;
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => { el.hidden = true; }, isError ? 6000 : 3000);
+}
+async function withBusy(fn, errorMessage) {
+  setBusy(true);
+  try {
+    return await fn();
+  } catch (err) {
+    console.error(err);
+    showToast((errorMessage || 'Something went wrong') + ': ' + (err.message || err), true);
+    throw err;
+  } finally {
+    setBusy(false);
+  }
+}
+
+/* ----- DB <-> app field mapping ----- */
+function toDbCatch(c) {
+  return {
+    id: c.id, user_id: currentUser.id, date: c.date, end_date: c.endDate || null,
+    date_approx: !!c.dateApprox, month_unknown: !!c.monthUnknown, is_blank: !!c.isBlank,
+    time: c.time || '', venue: c.venue || '', lake: c.lake || '', swim: c.swim || '',
+    species: c.species || '', species_detail: c.speciesDetail || '',
+    weight_lb: c.weightLb === undefined ? null : c.weightLb, weight_oz: c.weightOz === undefined ? null : c.weightOz,
+    quantity: c.quantity || 1, bait: c.bait || '', rig: c.rig || '', distance: c.distance || '',
+    hookbait: c.hookbait || '', air_temp: c.airTemp || '', wind: c.wind || '', pressure: c.pressure || '',
+    photos: c.photos || [], notes: c.notes || '', seed_batch: c.seedBatch || null, user_edited: !!c.userEdited
+  };
+}
+function fromDbCatch(r) {
+  return {
+    id: r.id, date: r.date, endDate: r.end_date, dateApprox: r.date_approx, monthUnknown: r.month_unknown,
+    isBlank: r.is_blank, time: r.time || '', venue: r.venue || '', lake: r.lake || '', swim: r.swim || '',
+    species: r.species || '', speciesDetail: r.species_detail || '',
+    weightLb: r.weight_lb === undefined ? null : r.weight_lb, weightOz: r.weight_oz === undefined ? null : r.weight_oz,
+    quantity: r.quantity || 1, bait: r.bait || '', rig: r.rig || '', distance: r.distance || '',
+    hookbait: r.hookbait || '', airTemp: r.air_temp || '', wind: r.wind || '', pressure: r.pressure || '',
+    photos: r.photos || [], notes: r.notes || '', seedBatch: r.seed_batch, userEdited: r.user_edited
+  };
+}
+function toDbWish(w) {
+  return {
+    id: w.id, user_id: currentUser.id, species: w.species, species_detail: w.speciesDetail || '',
+    target_lb: w.targetLb === undefined ? null : w.targetLb, target_oz: w.targetOz === undefined ? null : w.targetOz,
+    notes: w.notes || ''
+  };
+}
+function fromDbWish(r) {
+  return {
+    id: r.id, species: r.species, speciesDetail: r.species_detail || '',
+    targetLb: r.target_lb === undefined ? null : r.target_lb, targetOz: r.target_oz === undefined ? null : r.target_oz,
+    notes: r.notes || ''
+  };
+}
+function toDbPlan(p) {
+  return { id: p.id, user_id: currentUser.id, venue: p.venue, description: p.description || '', target_date: p.date || null };
+}
+function fromDbPlan(r) {
+  return { id: r.id, venue: r.venue, description: r.description || '', date: r.target_date };
+}
+
+/* ----- Photo upload to Supabase Storage ----- */
+async function uploadPhotoBlob(blob, contentType) {
+  const ext = (contentType && contentType.split('/')[1]) || 'jpg';
+  const path = currentUser.id + '/' + uid() + '.' + ext;
+  const { error } = await supabaseClient.storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: contentType || 'image/jpeg' });
+  if (error) throw error;
+  const { data } = supabaseClient.storage.from(PHOTO_BUCKET).getPublicUrl(path);
+  return data.publicUrl;
+}
+async function uploadPhotoDataUrl(dataUrl) {
+  const res = await fetch(dataUrl);
+  const blob = await res.blob();
+  return uploadPhotoBlob(blob, blob.type);
+}
+
+/* ----- Supabase-backed persistence ----- */
+async function fetchCatches() {
+  const { data, error } = await supabaseClient.from('catches').select('*').eq('user_id', currentUser.id);
+  if (error) throw error;
+  return data.map(fromDbCatch);
+}
+async function insertCatches(recs) {
+  if (!recs.length) return;
+  const { error } = await supabaseClient.from('catches').insert(recs.map(toDbCatch));
+  if (error) throw error;
+}
+async function updateCatchRow(rec) {
+  const { error } = await supabaseClient.from('catches').update(toDbCatch(rec)).eq('id', rec.id).eq('user_id', currentUser.id);
+  if (error) throw error;
+}
+async function deleteCatchRow(id) {
+  const { error } = await supabaseClient.from('catches').delete().eq('id', id).eq('user_id', currentUser.id);
+  if (error) throw error;
+}
+
+async function fetchWishlist() {
+  const { data, error } = await supabaseClient.from('wishlist').select('*').eq('user_id', currentUser.id);
+  if (error) throw error;
+  return data.map(fromDbWish);
+}
+async function insertWishlist(recs) {
+  if (!recs.length) return;
+  const { error } = await supabaseClient.from('wishlist').insert(recs.map(toDbWish));
+  if (error) throw error;
+}
+async function deleteWishRow(id) {
+  const { error } = await supabaseClient.from('wishlist').delete().eq('id', id).eq('user_id', currentUser.id);
+  if (error) throw error;
+}
+
+async function fetchPlans() {
+  const { data, error } = await supabaseClient.from('plans').select('*').eq('user_id', currentUser.id);
+  if (error) throw error;
+  return data.map(fromDbPlan);
+}
+async function insertPlans(recs) {
+  if (!recs.length) return;
+  const { error } = await supabaseClient.from('plans').insert(recs.map(toDbPlan));
+  if (error) throw error;
+}
+async function deletePlanRow(id) {
+  const { error } = await supabaseClient.from('plans').delete().eq('id', id).eq('user_id', currentUser.id);
+  if (error) throw error;
+}
+
+/* ----- One-time migration: local browser data (or built-in history) -> Supabase ----- */
+async function migrateIfNeeded() {
+  const { count, error } = await supabaseClient.from('catches').select('id', { count: 'exact', head: true }).eq('user_id', currentUser.id);
+  if (error) throw error;
+  if (count && count > 0) return; // this account already has data; never re-seed or re-migrate
+
+  showToast('Setting up your account for the first time\u2026');
+  let localCatches = null, localWishlist = null, localPlans = null;
+  try { localCatches = JSON.parse(localStorage.getItem(LOCAL_BACKUP_KEY) || 'null'); } catch (e) {}
+  try { localWishlist = JSON.parse(localStorage.getItem(LOCAL_WISHLIST_KEY) || 'null'); } catch (e) {}
+  try { localPlans = JSON.parse(localStorage.getItem(LOCAL_PLANS_KEY) || 'null'); } catch (e) {}
+
+  const sourceCatches = (localCatches && localCatches.length) ? localCatches : buildSeedDataCore().concat(buildSeedDataHistoric());
+
+  // Re-upload any base64 photos already sitting in localStorage so they live in Storage, not the database row.
+  for (const c of sourceCatches) {
+    if (Array.isArray(c.photos) && c.photos.length) {
+      const uploaded = [];
+      for (const p of c.photos) {
+        if (typeof p === 'string' && p.indexOf('data:') === 0) {
+          try { uploaded.push(await uploadPhotoDataUrl(p)); } catch (e) { console.warn('Photo migration failed for one photo', e); }
+        } else {
+          uploaded.push(p);
+        }
+      }
+      c.photos = uploaded;
+    } else {
+      c.photos = [];
+    }
+    if (typeof c.quantity !== 'number' || c.quantity < 1) c.quantity = 1;
+    if (typeof c.dateApprox !== 'boolean') c.dateApprox = false;
+    if (typeof c.monthUnknown !== 'boolean') c.monthUnknown = false;
+    if (typeof c.isBlank !== 'boolean') c.isBlank = false;
+    if (c.endDate === undefined) c.endDate = null;
+    if (!c.id) c.id = uid();
+  }
+  await insertCatches(sourceCatches);
+
+  const sourceWishlist = localWishlist || [];
+  sourceWishlist.forEach(w => { if (!w.id) w.id = uid(); });
+  await insertWishlist(sourceWishlist);
+
+  const sourcePlans = localPlans || [];
+  sourcePlans.forEach(p => { if (!p.id) p.id = uid(); });
+  await insertPlans(sourcePlans);
+
+  showToast('Account set up \u2014 ' + sourceCatches.length + ' catches loaded.');
+}
+
+/* ----- Helpers ----- */
+function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+function totalOz(lb, oz) {
+  if (lb === null || lb === undefined || lb === '') return null;
+  return (Number(lb) || 0) * 16 + (Number(oz) || 0);
+}
+function formatWeight(lb, oz) {
+  if (lb === null || lb === undefined || lb === '') return 'Not recorded';
+  return (Number(lb) || 0) + 'lb ' + (Number(oz) || 0) + 'oz';
+}
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function formatDateLong(iso, approx, monthUnknown) {
+  if (!iso) return 'Undated';
+  if (approx) {
+    const year = iso.slice(0, 4);
+    if (monthUnknown) return 'Historic catch (' + year + ')';
+    const mi = parseInt(iso.slice(5, 7), 10) - 1;
+    return 'Historic catch (' + MONTH_NAMES[mi].slice(0, 3) + ' ' + year + ')';
+  }
+  const d = new Date(iso + 'T00:00:00');
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+}
+function formatDateRange(startIso, endIso, approx, monthUnknown) {
+  if (approx) return formatDateLong(startIso, true, monthUnknown);
+  if (!endIso || endIso === startIso) return formatDateLong(startIso);
+  const start = new Date(startIso + 'T00:00:00');
+  const end = new Date(endIso + 'T00:00:00');
+  if (isNaN(start) || isNaN(end)) return formatDateLong(startIso);
+  const sameYear = start.getFullYear() === end.getFullYear();
+  const sameMonth = sameYear && start.getMonth() === end.getMonth();
+  const endFull = end.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const startPart = start.toLocaleDateString('en-GB', sameMonth
+    ? { weekday: 'short', day: 'numeric' }
+    : (sameYear ? { weekday: 'short', day: 'numeric', month: 'short' } : { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }));
+  return startPart + ' \u2013 ' + endFull;
+}
+function escapeHtml(str) {
+  return String(str == null ? '' : str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/* ----- Lightbox (supports a whole album for one catch) ----- */
+let lightboxPhotos = [];
+let lightboxIndex = 0;
+function openLightbox(photos, index) {
+  lightboxPhotos = photos || [];
+  lightboxIndex = index || 0;
+  if (!lightboxPhotos.length) return;
+  renderLightboxFrame();
+  document.getElementById('lightbox').hidden = false;
+}
+function renderLightboxFrame() {
+  document.getElementById('lightboxImg').src = lightboxPhotos[lightboxIndex];
+  const counter = document.getElementById('lightboxCounter');
+  const multi = lightboxPhotos.length > 1;
+  counter.textContent = multi ? (lightboxIndex + 1) + ' / ' + lightboxPhotos.length : '';
+  document.getElementById('lightboxPrev').style.display = multi ? '' : 'none';
+  document.getElementById('lightboxNext').style.display = multi ? '' : 'none';
+}
+function lightboxStep(delta) {
+  if (!lightboxPhotos.length) return;
+  lightboxIndex = (lightboxIndex + delta + lightboxPhotos.length) % lightboxPhotos.length;
+  renderLightboxFrame();
+}
+function closeLightbox() {
+  document.getElementById('lightbox').hidden = true;
+  document.getElementById('lightboxImg').src = '';
+  lightboxPhotos = [];
+  lightboxIndex = 0;
+}
+
+/* ----- Whole-trip date editor ----- */
+let dateEditorSessionKey = null;
+function openSessionDateEditor(key) {
+  const rows = catches.filter(c => [c.date, c.endDate || '', c.venue, c.lake, c.swim].join('|') === key);
+  if (!rows.length) return;
+  dateEditorSessionKey = key;
+  document.getElementById('de-start').value = rows[0].date || '';
+  document.getElementById('de-end').value = rows[0].endDate || '';
+  document.getElementById('dateEditorOverlay').hidden = false;
+}
+function closeSessionDateEditor() {
+  document.getElementById('dateEditorOverlay').hidden = true;
+  dateEditorSessionKey = null;
+}
+async function saveSessionDateEdit() {
+  const newStart = document.getElementById('de-start').value;
+  const newEnd = document.getElementById('de-end').value || null;
+  if (!newStart) { alert('Please choose a start date.'); return; }
+  if (!dateEditorSessionKey) return;
+  const affected = catches.filter(c => [c.date, c.endDate || '', c.venue, c.lake, c.swim].join('|') === dateEditorSessionKey);
+  await withBusy(async () => {
+    for (const c of affected) {
+      c.date = newStart;
+      c.endDate = newEnd;
+      c.userEdited = true;
+      await updateCatchRow(c);
+    }
+  }, 'Could not update trip dates');
+  closeSessionDateEditor();
+  renderLog();
+  renderStats();
+}
+
+/* ----- Views ----- */
+function setView(view) {
+  currentView = view;
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + view).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+  if (view === 'log') renderLog();
+  if (view === 'stats') renderStats();
+  if (view === 'wishlist') renderWishlist();
+  if (view === 'plans') renderPlans();
+  window.scrollTo(0, 0);
+}
+
+/* ----- Filters ----- */
+function populateFilterOptions() {
+  const years = Array.from(new Set(catches.map(c => (c.date || '').slice(0, 4)).filter(Boolean))).sort().reverse();
+  const yearSel = document.getElementById('filterYear');
+  const curYear = yearSel.value;
+  yearSel.innerHTML = '<option value="all">All years</option>' + years.map(y => '<option value="' + y + '">' + y + '</option>').join('');
+  if (years.includes(curYear)) yearSel.value = curYear;
+
+  const monthSel = document.getElementById('filterMonth');
+  if (!monthSel.options.length) {
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    monthSel.innerHTML = '<option value="all">All months</option>' + monthNames.map((m, i) => '<option value="' + String(i + 1).padStart(2, '0') + '">' + m + '</option>').join('');
+  }
+
+  const venues = Array.from(new Set(catches.map(c => c.venue).filter(Boolean).concat(EXTRA_VENUES))).sort((a, b) => a.localeCompare(b));
+  const venueSel = document.getElementById('filterVenue');
+  const curVenue = venueSel.value;
+  venueSel.innerHTML = '<option value="all">All venues</option>' + venues.map(v => '<option value="' + escapeHtml(v) + '">' + escapeHtml(v) + '</option>').join('');
+  if (venues.includes(curVenue)) venueSel.value = curVenue;
+
+  const speciesSel = document.getElementById('filterSpecies');
+  const curSpecies = speciesSel.value;
+  speciesSel.innerHTML = '<option value="all">All species</option>' +
+    '<optgroup label="UK species">' + UK_SPECIES.map(s => '<option value="' + s + '">' + s + '</option>').join('') + '</optgroup>' +
+    '<optgroup label="Exotic / overseas species">' + EXOTIC_SPECIES.map(s => '<option value="' + s + '">' + s + '</option>').join('') + '</optgroup>' +
+    '<option value="Other">Other</option>';
+  if (SPECIES_LIST.includes(curSpecies)) speciesSel.value = curSpecies;
+
+  const venueList = document.getElementById('venueList');
+  if (venueList) venueList.innerHTML = venues.map(v => '<option value="' + escapeHtml(v) + '">').join('');
+}
+
+function getFilteredCatches() {
+  const year = document.getElementById('filterYear').value || 'all';
+  const month = document.getElementById('filterMonth').value || 'all';
+  const venue = document.getElementById('filterVenue').value || 'all';
+  const species = document.getElementById('filterSpecies').value || 'all';
+  const q = document.getElementById('searchBox').value.trim().toLowerCase();
+
+  return catches.filter(c => {
+    if (year !== 'all' && (c.date || '').slice(0, 4) !== year) return false;
+    if (month !== 'all') {
+      if (c.monthUnknown) return false;
+      if ((c.date || '').slice(5, 7) !== month) return false;
+    }
+    if (venue !== 'all' && c.venue !== venue) return false;
+    if (species !== 'all' && c.species !== species) return false;
+    if (q) {
+      const hay = [c.bait, c.rig, c.notes, c.hookbait, c.speciesDetail, c.venue].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function clearFilters() {
+  document.getElementById('filterYear').value = 'all';
+  document.getElementById('filterMonth').value = 'all';
+  document.getElementById('filterVenue').value = 'all';
+  document.getElementById('filterSpecies').value = 'all';
+  document.getElementById('searchBox').value = '';
+  document.getElementById('sortOrder').value = 'desc';
+  renderLog();
+}
+
+function updateClearFiltersVisibility() {
+  const active =
+    document.getElementById('filterYear').value !== 'all' ||
+    document.getElementById('filterMonth').value !== 'all' ||
+    document.getElementById('filterVenue').value !== 'all' ||
+    document.getElementById('filterSpecies').value !== 'all' ||
+    document.getElementById('searchBox').value.trim() !== '' ||
+    document.getElementById('sortOrder').value !== 'desc';
+  document.getElementById('clearFiltersBtn').hidden = !active;
+}
+
+/* ----- Log rendering ----- */
+function renderLog() {
+  populateFilterOptions();
+  updateClearFiltersVisibility();
+  const sortDir = document.getElementById('sortOrder').value === 'asc' ? 1 : -1;
+  const list = getFilteredCatches().slice().sort((a, b) => {
+    if (a.date !== b.date) return a.date < b.date ? sortDir : -sortDir;
+    return sortDir * (a.time || '').localeCompare(b.time || '');
+  });
+
+  const meta = document.getElementById('resultsMeta');
+  const catchOnly = list.filter(c => !c.isBlank).reduce((s, c) => s + (c.quantity || 1), 0);
+  meta.textContent = catchOnly + (catchOnly === 1 ? ' catch' : ' catches') + ' shown';
+
+  const container = document.getElementById('logList');
+  if (list.length === 0) {
+    container.innerHTML = '<div class="empty-state">No catches match these filters. Try widening the search, or log a new capture.</div>';
+    return;
+  }
+
+  const sessions = new Map();
+  const order = [];
+  list.forEach(c => {
+    const key = [c.date, c.endDate || '', c.venue, c.lake, c.swim].join('|');
+    if (!sessions.has(key)) { sessions.set(key, []); order.push(key); }
+    sessions.get(key).push(c);
+  });
+
+  container.innerHTML = order.map(key => {
+    const rows = sessions.get(key);
+    const first = rows[0];
+    const isBlankSession = rows.length === 1 && rows[0].isBlank;
+    const fishTotal = rows.reduce((s, r) => s + (r.quantity || 1), 0);
+    const sub = [first.lake, first.swim ? 'Swim ' + first.swim : ''].filter(Boolean).join(' \u2014 ');
+    return (
+      '<div class="session' + (isBlankSession ? ' session-blank' : '') + '">' +
+        '<div class="session-head">' +
+          '<div class="session-date">' + formatDateRange(first.date, first.endDate, first.dateApprox, first.monthUnknown) + '</div>' +
+          '<div class="session-venue">' + escapeHtml(first.venue || 'Unnamed venue') + (sub ? '<span class="session-sub">' + escapeHtml(sub) + '</span>' : '') + '</div>' +
+          '<button type="button" class="icon-btn session-edit-dates" data-session-key="' + escapeHtml(key) + '">Edit dates</button>' +
+          '<div class="session-count">' + (isBlankSession ? 'No catches' : (fishTotal + (fishTotal === 1 ? ' fish' : ' fish'))) + '</div>' +
+        '</div>' +
+        (isBlankSession
+          ? blankRowHtml(rows[0])
+          : '<div class="catch-rows">' + rows.map(rowHtml).join('') + '</div>') +
+      '</div>'
+    );
+  }).join('');
+
+  container.querySelectorAll('.session-edit-dates').forEach(btn => {
+    btn.addEventListener('click', () => openSessionDateEditor(btn.dataset.sessionKey));
+  });
+
+  container.querySelectorAll('.catch-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('.row-actions')) return;
+      const photoImg = e.target.closest('.row-photos img');
+      if (photoImg) {
+        const cid = photoImg.closest('.row-photos').dataset.cid;
+        const rec = catches.find(cc => cc.id === cid);
+        if (rec) openLightbox(rec.photos, Number(photoImg.dataset.idx));
+        return;
+      }
+      row.classList.toggle('open');
+    });
+  });
+  container.querySelectorAll('[data-edit]').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.stopPropagation(); openEditForm(btn.dataset.edit); });
+  });
+  container.querySelectorAll('[data-delete]').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.stopPropagation(); deleteCatch(btn.dataset.delete); });
+  });
+}
+
+function rowHtml(c) {
+  const qtyPrefix = c.quantity && c.quantity > 1 ? '<span class="row-qty">' + c.quantity + '&times;</span> ' : '';
+  const speciesLabel = qtyPrefix + escapeHtml(c.species) + (c.speciesDetail ? ' <span class="species-detail">(' + escapeHtml(c.speciesDetail) + ')</span>' : '');
+  const tags = [c.bait, c.rig].filter(Boolean).map(escapeHtml).join(' &middot; ');
+  const details = [];
+  if (c.hookbait) details.push(['Hookbait', c.hookbait]);
+  if (c.distance) details.push(['Distance / wraps', c.distance]);
+  if (c.airTemp || c.wind || c.pressure) details.push(['Weather', [c.airTemp && (c.airTemp + '\u00b0C'), c.wind, c.pressure && (c.pressure + 'mb')].filter(Boolean).join(', ')]);
+  if (c.time) details.push(['Time', c.time]);
+  if (c.notes) details.push(['Notes', c.notes]);
+
+  return (
+    '<div class="catch-row">' +
+      '<div class="row-main">' +
+        '<div class="row-species">' + speciesLabel + '</div>' +
+        '<div class="row-weight">' + formatWeight(c.weightLb, c.weightOz) + '</div>' +
+        '<div class="row-tags">' + (tags || '&nbsp;') + '</div>' +
+        '<div class="row-actions">' +
+          '<button class="icon-btn" data-edit="' + c.id + '" aria-label="Edit">Edit</button>' +
+          '<button class="icon-btn danger" data-delete="' + c.id + '" aria-label="Delete">Delete</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="row-expand">' +
+        (c.photos && c.photos.length ? '<div class="row-photos" data-cid="' + c.id + '">' + c.photos.map((p, i) => '<img src="' + p + '" data-idx="' + i + '" alt="Catch photo">').join('') + '</div>' : '') +
+        '<dl class="row-detail-list">' + details.map(kv => '<dt>' + escapeHtml(kv[0]) + '</dt><dd>' + escapeHtml(kv[1]) + '</dd>').join('') + '</dl>' +
+        (details.length === 0 && (!c.photos || !c.photos.length) ? '<p class="no-extra">No additional details logged.</p>' : '') +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function blankRowHtml(c) {
+  return (
+    '<div class="catch-row blank-row">' +
+      '<div class="row-main">' +
+        '<div class="row-species blank-label">No fish caught this session</div>' +
+        '<div class="row-weight">&nbsp;</div>' +
+        '<div class="row-tags">&nbsp;</div>' +
+        '<div class="row-actions">' +
+          '<button class="icon-btn" data-edit="' + c.id + '" aria-label="Edit">Edit</button>' +
+          '<button class="icon-btn danger" data-delete="' + c.id + '" aria-label="Delete">Delete</button>' +
+        '</div>' +
+      '</div>' +
+      (c.notes ? '<div class="row-expand" style="max-height:200px; padding-top:10px;"><dl class="row-detail-list"><dt>Notes</dt><dd>' + escapeHtml(c.notes) + '</dd></dl></div>' : '') +
+    '</div>'
+  );
+}
+
+/* ----- Form ----- */
+function renderPhotoPreview() {
+  const wrap = document.getElementById('photoPreview');
+  wrap.innerHTML = formPhotos.map((p, i) =>
+    '<div class="photo-thumb"><img src="' + p + '" alt="Preview"><button type="button" class="thumb-remove" data-photo-index="' + i + '" aria-label="Remove photo">&times;</button></div>'
+  ).join('');
+  wrap.querySelectorAll('[data-photo-index]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      formPhotos.splice(Number(btn.dataset.photoIndex), 1);
+      renderPhotoPreview();
+    });
+  });
+  wrap.querySelectorAll('.photo-thumb img').forEach((img, i) => {
+    img.addEventListener('click', () => openLightbox(formPhotos, i));
+  });
+}
+
+function toggleLegacyMode() {
+  const legacy = document.getElementById('f-legacy').checked;
+  document.getElementById('dateFieldWrap').style.display = legacy ? 'none' : '';
+  document.getElementById('yearFieldWrap').style.display = legacy ? '' : 'none';
+  document.getElementById('monthFieldWrap').style.display = legacy ? '' : 'none';
+  document.getElementById('timeFieldWrap').style.display = legacy ? 'none' : '';
+  document.getElementById('endDateFieldWrap').style.display = legacy ? 'none' : '';
+  document.getElementById('weatherFetchWrap').style.display = legacy ? 'none' : '';
+  document.getElementById('f-date').required = !legacy;
+  if (legacy) document.getElementById('quantityWrap').style.display = 'none';
+  else if (!editingId && !document.getElementById('f-blank').checked) document.getElementById('quantityWrap').style.display = '';
+}
+
+function toggleBlankMode() {
+  const blank = document.getElementById('f-blank').checked;
+  document.getElementById('speciesRowWrap').style.display = blank ? 'none' : '';
+  document.getElementById('weightFieldWrap').style.display = blank ? 'none' : '';
+  document.getElementById('baitRigRowWrap').style.display = blank ? 'none' : '';
+  document.getElementById('f-species').required = !blank;
+  if (blank) document.getElementById('quantityWrap').style.display = 'none';
+  else if (!editingId && !document.getElementById('f-legacy').checked) document.getElementById('quantityWrap').style.display = '';
+}
+
+function resetForm() {
+  editingId = null;
+  formPhotos = [];
+  document.getElementById('catchForm').reset();
+  renderPhotoPreview();
+  document.getElementById('formTitle').textContent = 'Add new catch';
+  document.getElementById('submitBtn').textContent = 'Save catch';
+  document.getElementById('cancelEdit').hidden = true;
+  document.getElementById('f-quantity').value = 1;
+  document.getElementById('f-legacy').checked = false;
+  document.getElementById('f-legacyYear').value = '';
+  document.getElementById('f-legacyMonth').value = '';
+  document.getElementById('f-blank').checked = false;
+  document.getElementById('f-endDate').value = '';
+  document.getElementById('weatherFetchStatus').textContent = '';
+  toggleLegacyMode();
+  toggleBlankMode();
+  const today = new Date();
+  document.getElementById('f-date').value = today.toISOString().slice(0, 10);
+  toggleSpeciesDetailVisibility();
+}
+
+function openAddForm() { resetForm(); setView('add'); }
+
+function openHistoricPBForm() {
+  resetForm();
+  document.getElementById('f-legacy').checked = true;
+  toggleLegacyMode();
+  setView('add');
+}
+
+function openEditForm(id) {
+  const c = catches.find(x => x.id === id);
+  if (!c) return;
+  editingId = id;
+  formPhotos = (c.photos || []).slice();
+  document.getElementById('f-legacy').checked = !!c.dateApprox;
+  if (c.dateApprox) {
+    document.getElementById('f-legacyYear').value = (c.date || '').slice(0, 4);
+    document.getElementById('f-legacyMonth').value = c.monthUnknown ? '' : String(parseInt((c.date || '').slice(5, 7), 10));
+  } else {
+    document.getElementById('f-date').value = c.date || '';
+  }
+  document.getElementById('f-endDate').value = c.endDate || '';
+  document.getElementById('f-blank').checked = !!c.isBlank;
+  toggleLegacyMode();
+  toggleBlankMode();
+  document.getElementById('f-time').value = c.time || '';
+  document.getElementById('f-venue').value = c.venue || '';
+  document.getElementById('f-lake').value = c.lake || '';
+  document.getElementById('f-species').value = c.species || '';
+  document.getElementById('f-speciesDetail').value = c.speciesDetail || '';
+  document.getElementById('f-weightLb').value = c.weightLb === null || c.weightLb === undefined ? '' : c.weightLb;
+  document.getElementById('f-weightOz').value = c.weightOz === null || c.weightOz === undefined ? '' : c.weightOz;
+  document.getElementById('f-bait').value = c.bait || '';
+  document.getElementById('f-rig').value = c.rig || '';
+  document.getElementById('f-swim').value = c.swim || '';
+  document.getElementById('f-distance').value = c.distance || '';
+  document.getElementById('f-hookbait').value = c.hookbait || '';
+  document.getElementById('f-airTemp').value = c.airTemp || '';
+  document.getElementById('f-wind').value = c.wind || '';
+  document.getElementById('f-pressure').value = c.pressure || '';
+  document.getElementById('f-notes').value = c.notes || '';
+  document.getElementById('f-quantityEdit').value = c.quantity || 1;
+  document.getElementById('quantityEditWrap').style.display = (c.quantity && c.quantity > 1 && !c.isBlank) ? '' : 'none';
+  renderPhotoPreview();
+  document.getElementById('quantityWrap').style.display = 'none';
+  toggleSpeciesDetailVisibility();
+  document.getElementById('formTitle').textContent = 'Edit catch';
+  document.getElementById('submitBtn').textContent = 'Update catch';
+  document.getElementById('cancelEdit').hidden = false;
+  setView('add');
+}
+
+function toggleSpeciesDetailVisibility() {
+  const sp = document.getElementById('f-species').value;
+  document.getElementById('speciesDetailWrap').style.display = (sp === 'Other') ? '' : 'none';
+}
+
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  const legacy = document.getElementById('f-legacy').checked;
+  const blank = document.getElementById('f-blank').checked;
+  const lbVal = blank ? '' : document.getElementById('f-weightLb').value;
+  const ozVal = blank ? '' : document.getElementById('f-weightOz').value;
+  const quantity = (editingId || legacy || blank) ? 1 : Math.max(1, parseInt(document.getElementById('f-quantity').value, 10) || 1);
+
+  let date, dateApprox, monthUnknown = false;
+  if (legacy) {
+    const yearVal = document.getElementById('f-legacyYear').value;
+    if (!yearVal) { alert('Please enter an approximate year for this historic catch.'); return; }
+    const monthVal = document.getElementById('f-legacyMonth').value;
+    monthUnknown = !monthVal;
+    date = yearVal + '-' + String(monthVal || '1').padStart(2, '0') + '-01';
+    dateApprox = true;
+  } else {
+    date = document.getElementById('f-date').value;
+    dateApprox = false;
+  }
+
+  let photos;
+  try {
+    photos = await withBusy(() => resolveFormPhotos(), 'Could not upload photo');
+  } catch (err) {
+    return; // error already surfaced by withBusy
+  }
+
+  const base = {
+    date: date,
+    endDate: legacy ? null : (document.getElementById('f-endDate').value || null),
+    dateApprox: dateApprox,
+    monthUnknown: monthUnknown,
+    isBlank: blank,
+    time: legacy ? '' : document.getElementById('f-time').value,
+    venue: document.getElementById('f-venue').value.trim(),
+    lake: document.getElementById('f-lake').value.trim(),
+    swim: document.getElementById('f-swim').value.trim(),
+    species: blank ? '' : document.getElementById('f-species').value,
+    speciesDetail: blank ? '' : document.getElementById('f-speciesDetail').value.trim(),
+    bait: blank ? '' : document.getElementById('f-bait').value.trim(),
+    rig: blank ? '' : document.getElementById('f-rig').value.trim(),
+    distance: document.getElementById('f-distance').value.trim(),
+    hookbait: document.getElementById('f-hookbait').value.trim(),
+    airTemp: document.getElementById('f-airTemp').value.trim(),
+    wind: document.getElementById('f-wind').value.trim(),
+    pressure: document.getElementById('f-pressure').value.trim(),
+    photos: photos,
+    notes: document.getElementById('f-notes').value.trim()
+  };
+  if (!base.venue || !base.date || (!blank && !base.species)) {
+    alert(blank ? 'Venue and a date (or approximate year) are required.' : 'Venue, species and a date (or approximate year) are required.');
+    return;
+  }
+
+  const weightLb = lbVal === '' ? null : Number(lbVal);
+  const weightOz = ozVal === '' ? null : Number(ozVal);
+  let toInsert = [];
+
+  if (editingId) {
+    const existing = catches.find(x => x.id === editingId);
+    const editQty = blank ? 1 : Math.max(1, parseInt(document.getElementById('f-quantityEdit').value, 10) || 1);
+    const rec = Object.assign({ id: editingId }, base, { weightLb, weightOz, quantity: editQty, userEdited: true });
+    if (existing && existing.seedBatch) rec.seedBatch = existing.seedBatch;
+    await withBusy(() => updateCatchRow(rec), 'Could not save changes');
+    const idx = catches.findIndex(x => x.id === editingId);
+    if (idx > -1) catches[idx] = rec;
+  } else if (quantity <= 1) {
+    toInsert = [Object.assign({ id: uid() }, base, { weightLb, weightOz, quantity: 1 })];
+  } else if (weightLb === null && weightOz === null) {
+    toInsert = [Object.assign({ id: uid() }, base, { weightLb: null, weightOz: null, quantity: quantity })];
+  } else {
+    toInsert = [
+      Object.assign({ id: uid() }, base, { weightLb, weightOz, quantity: 1 }),
+      Object.assign({ id: uid() }, base, {
+        weightLb: null, weightOz: null, quantity: quantity - 1,
+        notes: (base.notes ? base.notes + ' ' : '') + 'The rest of this catch were not individually weighed.'
+      })
+    ];
+  }
+  if (toInsert.length) {
+    try {
+      await withBusy(() => insertCatches(toInsert), 'Could not save catch');
+    } catch (err) {
+      return;
+    }
+    catches = catches.concat(toInsert);
+  }
+  resetForm();
+  setView('log');
+}
+
+async function deleteCatch(id) {
+  if (!confirm('Delete this catch record? This cannot be undone.')) return;
+  try {
+    await withBusy(() => deleteCatchRow(id), 'Could not delete catch');
+  } catch (err) {
+    return;
+  }
+  catches = catches.filter(c => c.id !== id);
+  renderLog();
+  renderStats();
+}
+
+/* ----- Photo upload ----- */
+function handlePhotoInput(e) {
+  const files = Array.from(e.target.files || []);
+  if (!files.length) return;
+  let remaining = files.length;
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      formPhotos.push(reader.result);
+      remaining--;
+      if (remaining === 0) {
+        renderPhotoPreview();
+        e.target.value = '';
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// Uploads any freshly-picked photo (still a local base64 preview) to Supabase Storage
+// and returns the final array of storage URLs to save on the catch record. Photos that
+// are already real URLs (editing an existing catch) are left untouched.
+async function resolveFormPhotos() {
+  const resolved = [];
+  for (const p of formPhotos) {
+    if (typeof p === 'string' && p.indexOf('data:') === 0) {
+      resolved.push(await uploadPhotoDataUrl(p));
+    } else {
+      resolved.push(p);
+    }
+  }
+  return resolved;
+}
+
+/* ----- Weather lookup (real data only, never guessed) ----- */
+function degToCompass(deg) {
+  const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  return dirs[Math.round(deg / 22.5) % 16];
+}
+
+function getGeolocation() {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) { reject(new Error('This browser has no location support.')); return; }
+    navigator.geolocation.getCurrentPosition(
+      pos => resolve(pos.coords),
+      err => reject(new Error('Location access was blocked or unavailable.')),
+      { timeout: 10000 }
+    );
+  });
+}
+
+async function fetchWeather() {
+  const statusEl = document.getElementById('weatherFetchStatus');
+  statusEl.textContent = 'Getting your location\u2026';
+  const dateVal = document.getElementById('f-date').value;
+  if (!dateVal) { statusEl.textContent = 'Set a date first, then look up weather for it.'; return; }
+
+  let coords;
+  try {
+    coords = await getGeolocation();
+  } catch (err) {
+    statusEl.textContent = 'Couldn\u2019t get your location \u2014 ' + err.message + ' Nothing was filled in.';
+    return;
+  }
+
+  statusEl.textContent = 'Fetching weather record\u2026';
+  const today = new Date().toISOString().slice(0, 10);
+  const daysAgo = Math.round((new Date(today) - new Date(dateVal)) / 86400000);
+  const base = daysAgo > 5
+    ? 'https://archive-api.open-meteo.com/v1/archive'
+    : 'https://api.open-meteo.com/v1/forecast';
+  const url = base + '?latitude=' + coords.latitude.toFixed(4) + '&longitude=' + coords.longitude.toFixed(4) +
+    '&start_date=' + dateVal + '&end_date=' + dateVal +
+    '&hourly=temperature_2m,pressure_msl,wind_speed_10m,wind_direction_10m&timezone=auto';
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('weather service returned an error');
+    const data = await res.json();
+    const times = data.hourly && data.hourly.time;
+    if (!times || !times.length) throw new Error('no data for that date/location');
+    const timeVal = document.getElementById('f-time').value;
+    const targetHour = timeVal ? parseInt(timeVal.split(':')[0], 10) : 12;
+    let idx = times.findIndex(t => t.endsWith('T' + String(targetHour).padStart(2, '0') + ':00'));
+    if (idx === -1) idx = Math.min(Math.floor(times.length / 2), times.length - 1);
+
+    const temp = data.hourly.temperature_2m[idx];
+    const pressure = data.hourly.pressure_msl[idx];
+    const windSpeed = data.hourly.wind_speed_10m[idx];
+    const windDir = data.hourly.wind_direction_10m[idx];
+    if ([temp, pressure, windSpeed, windDir].some(v => v === null || v === undefined)) {
+      throw new Error('weather record incomplete for that date');
+    }
+
+    document.getElementById('f-airTemp').value = Math.round(temp);
+    document.getElementById('f-pressure').value = Math.round(pressure);
+    document.getElementById('f-wind').value = degToCompass(windDir) + ', ~' + Math.round(windSpeed) + 'km/h';
+    statusEl.textContent = 'Filled in from Open-Meteo for ' + coords.latitude.toFixed(2) + ', ' + coords.longitude.toFixed(2) + ' at ' + String(targetHour).padStart(2, '0') + ':00 on ' + dateVal + '.';
+  } catch (err) {
+    statusEl.textContent = 'Couldn\u2019t fetch a real weather record (' + err.message + '). Nothing was filled in \u2014 enter it manually if you know it.';
+  }
+}
+
+/* ----- Stats ----- */
+function computePBMap(source) {
+  const bySpecies = new Map();
+  (source || catches).forEach(c => {
+    if (c.isBlank) return;
+    const oz = totalOz(c.weightLb, c.weightOz);
+    if (oz === null) return;
+    const cur = bySpecies.get(c.species);
+    if (!cur || oz > cur.oz) bySpecies.set(c.species, { oz, c });
+  });
+  return bySpecies;
+}
+
+function populateStatsFilterOptions() {
+  const years = Array.from(new Set(catches.map(c => (c.date || '').slice(0, 4)).filter(Boolean))).sort().reverse();
+  const yearSel = document.getElementById('statsFilterYear');
+  const curYear = yearSel.value;
+  yearSel.innerHTML = '<option value="all">All years</option>' + years.map(y => '<option value="' + y + '">' + y + '</option>').join('');
+  if (years.includes(curYear)) yearSel.value = curYear;
+
+  const venues = Array.from(new Set(catches.map(c => c.venue).filter(Boolean).concat(EXTRA_VENUES))).sort((a, b) => a.localeCompare(b));
+  const venueSel = document.getElementById('statsFilterVenue');
+  const curVenue = venueSel.value;
+  venueSel.innerHTML = '<option value="all">All venues</option>' + venues.map(v => '<option value="' + escapeHtml(v) + '">' + escapeHtml(v) + '</option>').join('');
+  if (venues.includes(curVenue)) venueSel.value = curVenue;
+
+  document.getElementById('statsClearBtn').hidden = (yearSel.value === 'all' && venueSel.value === 'all');
+}
+
+function clearStatsFilters() {
+  document.getElementById('statsFilterYear').value = 'all';
+  document.getElementById('statsFilterVenue').value = 'all';
+  renderStats();
+}
+
+function renderStats() {
+  populateStatsFilterOptions();
+  const yearFilter = document.getElementById('statsFilterYear').value;
+  const venueFilter = document.getElementById('statsFilterVenue').value;
+  document.getElementById('statsClearBtn').hidden = (yearFilter === 'all' && venueFilter === 'all');
+
+  const scoped = catches.filter(c =>
+    (yearFilter === 'all' || (c.date || '').slice(0, 4) === yearFilter) &&
+    (venueFilter === 'all' || c.venue === venueFilter)
+  );
+  const realCatches = scoped.filter(c => !c.isBlank);
+  const total = realCatches.reduce((s, c) => s + (c.quantity || 1), 0);
+  const venues = new Set(realCatches.map(c => c.venue).filter(Boolean));
+  let pb = null;
+  realCatches.forEach(c => {
+    const oz = totalOz(c.weightLb, c.weightOz);
+    if (oz !== null && (pb === null || oz > pb.oz)) pb = { oz, c };
+  });
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statPB').textContent = pb ? formatWeight(pb.c.weightLb, pb.c.weightOz) : '\u2014';
+  document.getElementById('statPBWho').textContent = pb ? (pb.c.species + (pb.c.speciesDetail ? ' (' + pb.c.speciesDetail + ')' : '') + ' \u2014 ' + pb.c.venue) : 'No weights logged yet';
+  document.getElementById('statVenues').textContent = venues.size;
+
+  const bySpecies = computePBMap(scoped);
+  const rows = Array.from(bySpecies.values()).sort((a, b) => b.oz - a.oz);
+
+  const tbody = document.getElementById('pbTableBody');
+  if (rows.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" class="empty-state">No weighed catches yet \u2014 add a weight to see personal bests.</td></tr>';
+  } else {
+    tbody.innerHTML = rows.map(r => {
+      const hasPhotos = r.c.photos && r.c.photos.length;
+      return (
+        '<tr class="pb-row" data-pb-id="' + r.c.id + '">' +
+          '<td>' + escapeHtml(r.c.species) + (r.c.speciesDetail ? ' <span class="species-detail">(' + escapeHtml(r.c.speciesDetail) + ')</span>' : '') + (hasPhotos ? ' <span class="pb-photo-flag">&#128247;</span>' : '') + '</td>' +
+          '<td class="num">' + formatWeight(r.c.weightLb, r.c.weightOz) + '</td>' +
+          '<td>' + escapeHtml(r.c.venue) + '</td>' +
+          '<td>' + formatDateLong(r.c.date, r.c.dateApprox, r.c.monthUnknown) + '</td>' +
+        '</tr>' +
+        '<tr class="pb-detail-row" data-pb-detail="' + r.c.id + '" hidden>' +
+          '<td colspan="4">' +
+            (hasPhotos ? '<div class="row-photos" data-cid="' + r.c.id + '">' + r.c.photos.map((p, i) => '<img src="' + p + '" data-idx="' + i + '" alt="Catch photo">').join('') + '</div>' : '<p class="no-extra">No photo saved for this catch.</p>') +
+            (r.c.notes ? '<p class="pb-detail-notes">' + escapeHtml(r.c.notes) + '</p>' : '') +
+          '</td>' +
+        '</tr>'
+      );
+    }).join('');
+
+    tbody.querySelectorAll('.pb-row').forEach(tr => {
+      tr.addEventListener('click', (e) => {
+        const photoImg = e.target.closest('.row-photos img');
+        if (photoImg) {
+          const cid = photoImg.closest('.row-photos').dataset.cid;
+          const rec = catches.find(cc => cc.id === cid);
+          if (rec) openLightbox(rec.photos, Number(photoImg.dataset.idx));
+          return;
+        }
+        const detail = tbody.querySelector('[data-pb-detail="' + tr.dataset.pbId + '"]');
+        if (detail) detail.hidden = !detail.hidden;
+      });
+    });
+    tbody.querySelectorAll('.pb-detail-row .row-photos img').forEach(img => {
+      img.addEventListener('click', () => {
+        const cid = img.closest('.row-photos').dataset.cid;
+        const rec = catches.find(cc => cc.id === cid);
+        if (rec) openLightbox(rec.photos, Number(img.dataset.idx));
+      });
+    });
+  }
+
+  const countBySpecies = new Map();
+  realCatches.forEach(c => countBySpecies.set(c.species, (countBySpecies.get(c.species) || 0) + (c.quantity || 1)));
+  const maxCount = Math.max(1, ...countBySpecies.values());
+  const breakdown = Array.from(countBySpecies.entries()).sort((a, b) => b[1] - a[1]);
+  document.getElementById('speciesBreakdown').innerHTML = breakdown.map(entry =>
+    '<div class="bar-row">' +
+      '<div class="bar-label">' + escapeHtml(entry[0]) + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + (entry[1] / maxCount * 100).toFixed(0) + '%"></div></div>' +
+      '<div class="bar-count">' + entry[1] + '</div>' +
+    '</div>'
+  ).join('');
+
+  const countByVenue = new Map();
+  realCatches.forEach(c => { if (c.venue) countByVenue.set(c.venue, (countByVenue.get(c.venue) || 0) + (c.quantity || 1)); });
+  const maxVenueCount = Math.max(1, ...countByVenue.values());
+  const venueBreakdown = Array.from(countByVenue.entries()).sort((a, b) => b[1] - a[1]);
+  document.getElementById('venueBreakdown').innerHTML = venueBreakdown.length ? venueBreakdown.map(entry =>
+    '<div class="bar-row">' +
+      '<div class="bar-label">' + escapeHtml(entry[0]) + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + (entry[1] / maxVenueCount * 100).toFixed(0) + '%"></div></div>' +
+      '<div class="bar-count">' + entry[1] + '</div>' +
+    '</div>'
+  ).join('') : '<div class="empty-state">No catches match this filter.</div>';
+}
+
+/* ----- Wish list ----- */
+let wishlist = [];
+
+function isWishAchieved(w, pbMap, catchCounts) {
+  if (w.targetLb !== null && w.targetLb !== undefined) {
+    const pb = pbMap.get(w.species);
+    return pb ? pb.oz >= totalOz(w.targetLb, w.targetOz) : false;
+  }
+  return (catchCounts.get(w.species) || 0) > 0;
+}
+
+function renderWishlist() {
+  const pbMap = computePBMap();
+  const catchCounts = new Map();
+  catches.filter(c => !c.isBlank).forEach(c => catchCounts.set(c.species, (catchCounts.get(c.species) || 0) + 1));
+
+  const wrap = document.getElementById('wishList');
+  const summaryEl = document.getElementById('wishSummary');
+
+  if (wishlist.length === 0) {
+    if (summaryEl) summaryEl.innerHTML = '';
+    wrap.innerHTML = '<div class="empty-state">No targets yet &mdash; add a species or weight above that you\u2019re after.</div>';
+    return;
+  }
+
+  const achievedCount = wishlist.filter(w => isWishAchieved(w, pbMap, catchCounts)).length;
+  const pct = Math.round(achievedCount / wishlist.length * 100);
+  if (summaryEl) {
+    summaryEl.innerHTML =
+      '<div class="wish-summary-row"><span>' + achievedCount + ' of ' + wishlist.length + ' targets achieved</span><span>' + pct + '%</span></div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>';
+  }
+
+  wrap.innerHTML = wishlist.map(w => {
+    const hasTarget = w.targetLb !== null && w.targetLb !== undefined;
+    const pb = pbMap.get(w.species);
+    const achieved = isWishAchieved(w, pbMap, catchCounts);
+    let statusHtml;
+    if (hasTarget) {
+      const targetOz = totalOz(w.targetLb, w.targetOz);
+      const rawPct = pb ? (pb.oz / targetOz * 100) : 0;
+      const pct2 = Math.min(100, Math.round(rawPct));
+      let remainingText = '';
+      if (achieved) {
+        remainingText = 'Target beaten';
+      } else if (pb) {
+        const shortOz = targetOz - pb.oz;
+        remainingText = formatWeight(Math.floor(shortOz / 16), shortOz % 16) + ' to go';
+      } else if ((catchCounts.get(w.species) || 0) > 0) {
+        remainingText = 'Caught, but none weighed yet';
+      } else {
+        remainingText = 'None caught yet';
+      }
+      statusHtml =
+        '<div class="wish-target">Target: ' + formatWeight(w.targetLb, w.targetOz) + (pb ? ' &mdash; current best ' + formatWeight(pb.c.weightLb, pb.c.weightOz) : '') + '</div>' +
+        '<div class="wish-progress">' +
+          '<div class="wish-progress-row"><span>' + remainingText + '</span><span class="wish-pct">' + pct2 + '%</span></div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + pct2 + '%"></div></div>' +
+        '</div>';
+    } else {
+      statusHtml = '<div class="wish-target">' + (achieved ? 'Already on the log' : 'Not caught yet') + '</div>';
+    }
+    return (
+      '<div class="wish-card' + (achieved ? ' achieved' : '') + '">' +
+        '<div class="wish-head">' +
+          '<div>' +
+            '<div class="wish-species">' + escapeHtml(w.species) + (w.speciesDetail ? ' <span class="species-detail">(' + escapeHtml(w.speciesDetail) + ')</span>' : '') + '</div>' +
+          '</div>' +
+          '<div class="wish-badge' + (achieved ? ' achieved' : '') + '">' + (achieved ? 'Achieved' : 'Not yet') + '</div>' +
+        '</div>' +
+        statusHtml +
+        (w.notes ? '<div class="wish-notes">' + escapeHtml(w.notes) + '</div>' : '') +
+        '<button type="button" class="icon-btn danger wish-remove" data-wish-delete="' + w.id + '">Remove</button>' +
+      '</div>'
+    );
+  }).join('');
+
+  wrap.querySelectorAll('[data-wish-delete]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.dataset.wishDelete;
+      try {
+        await withBusy(() => deleteWishRow(id), 'Could not remove target');
+      } catch (err) { return; }
+      wishlist = wishlist.filter(w => w.id !== id);
+      renderWishlist();
+    });
+  });
+}
+
+async function handleWishSubmit(e) {
+  e.preventDefault();
+  const lbVal = document.getElementById('wish-weightLb').value;
+  const ozVal = document.getElementById('wish-weightOz').value;
+  const species = document.getElementById('wish-species').value;
+  if (!species) { alert('Please choose a species.'); return; }
+  const rec = {
+    id: uid(),
+    species: species,
+    speciesDetail: document.getElementById('wish-detail').value.trim(),
+    targetLb: lbVal === '' ? null : Number(lbVal),
+    targetOz: ozVal === '' ? null : Number(ozVal),
+    notes: document.getElementById('wish-notes').value.trim()
+  };
+  try {
+    await withBusy(() => insertWishlist([rec]), 'Could not save target');
+  } catch (err) { return; }
+  wishlist.push(rec);
+  document.getElementById('wishForm').reset();
+  renderWishlist();
+}
+
+/* ----- Trip planning ----- */
+let plans = [];
+
+function renderPlans() {
+  const wrap = document.getElementById('planList');
+  if (plans.length === 0) {
+    wrap.innerHTML = '<div class="empty-state">No trip ideas yet &mdash; add a venue above you\u2019d like to fish.</div>';
+    return;
+  }
+  const sorted = plans.slice().sort((a, b) => {
+    if (a.date && b.date) return a.date < b.date ? -1 : 1;
+    if (a.date) return -1;
+    if (b.date) return 1;
+    return 0;
+  });
+  wrap.innerHTML = sorted.map(p => (
+    '<div class="wish-card">' +
+      '<div class="wish-head">' +
+        '<div class="wish-species">' + escapeHtml(p.venue) + '</div>' +
+        (p.date ? '<div class="wish-badge">' + formatDateLong(p.date) + '</div>' : '') +
+      '</div>' +
+      (p.description ? '<div class="wish-notes">' + escapeHtml(p.description) + '</div>' : '') +
+      '<button type="button" class="icon-btn danger wish-remove" data-plan-delete="' + p.id + '">Remove</button>' +
+    '</div>'
+  )).join('');
+  wrap.querySelectorAll('[data-plan-delete]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.dataset.planDelete;
+      try {
+        await withBusy(() => deletePlanRow(id), 'Could not remove trip idea');
+      } catch (err) { return; }
+      plans = plans.filter(p => p.id !== id);
+      renderPlans();
+    });
+  });
+}
+
+async function handlePlanSubmit(e) {
+  e.preventDefault();
+  const venue = document.getElementById('plan-venue').value.trim();
+  if (!venue) { alert('Please name the venue.'); return; }
+  const rec = {
+    id: uid(),
+    venue: venue,
+    description: document.getElementById('plan-description').value.trim(),
+    date: document.getElementById('plan-date').value || null
+  };
+  try {
+    await withBusy(() => insertPlans([rec]), 'Could not save trip idea');
+  } catch (err) { return; }
+  plans.push(rec);
+  document.getElementById('planForm').reset();
+  renderPlans();
+}
+
+/* ----- Import / export (bundles catches + wish list so nothing gets left behind) ----- */
+function exportData() {
+  const payload = { catches: catches, wishlist: wishlist, plans: plans, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'angling-log-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function importData(file) {
+  const reader = new FileReader();
+  reader.onload = async () => {
+    try {
+      const parsed = JSON.parse(reader.result);
+      let newCatches, newWishlist, newPlans, hasWishlist, hasPlans;
+      if (Array.isArray(parsed)) {
+        newCatches = parsed; newWishlist = wishlist; newPlans = plans; hasWishlist = false; hasPlans = false;
+      } else if (parsed && Array.isArray(parsed.catches)) {
+        newCatches = parsed.catches;
+        newWishlist = Array.isArray(parsed.wishlist) ? parsed.wishlist : wishlist;
+        newPlans = Array.isArray(parsed.plans) ? parsed.plans : plans;
+        hasWishlist = Array.isArray(parsed.wishlist);
+        hasPlans = Array.isArray(parsed.plans);
+      } else {
+        throw new Error('not a recognised export');
+      }
+      const bits = [newCatches.length + ' catches'];
+      if (hasWishlist) bits.push(newWishlist.length + ' wish list targets');
+      if (hasPlans) bits.push(newPlans.length + ' trip plans');
+      const msg = 'Import ' + bits.join(', ') + '? This replaces everything currently in your account.';
+      if (!confirm(msg)) return;
+
+      await withBusy(async () => {
+        // Replace-all: clear this account's existing rows, then bulk insert the import.
+        await supabaseClient.from('catches').delete().eq('user_id', currentUser.id);
+        await supabaseClient.from('wishlist').delete().eq('user_id', currentUser.id);
+        await supabaseClient.from('plans').delete().eq('user_id', currentUser.id);
+        newCatches.forEach(c => { if (!c.id) c.id = uid(); if (!Array.isArray(c.photos)) c.photos = []; });
+        newWishlist.forEach(w => { if (!w.id) w.id = uid(); });
+        newPlans.forEach(p => { if (!p.id) p.id = uid(); });
+        // Older exports may still carry raw base64 photos; move those into Storage now
+        // rather than writing huge strings into the database.
+        for (const c of newCatches) {
+          for (let i = 0; i < c.photos.length; i++) {
+            if (typeof c.photos[i] === 'string' && c.photos[i].indexOf('data:') === 0) {
+              c.photos[i] = await uploadPhotoDataUrl(c.photos[i]);
+            }
+          }
+        }
+        await insertCatches(newCatches);
+        await insertWishlist(newWishlist);
+        await insertPlans(newPlans);
+      }, 'Import failed');
+
+      catches = newCatches;
+      wishlist = newWishlist;
+      plans = newPlans;
+      renderLog();
+      renderStats();
+      renderWishlist();
+      renderPlans();
+      showToast('Import complete.');
+    } catch (err) {
+      showToast('Could not read that file as a valid catch log export.', true);
+    }
+  };
+  reader.readAsText(file);
+}
+
+/* ----- Init ----- */
+function wireUpUI() {
+  const speciesSelectEl = document.getElementById('f-species');
+  const ukGroup = document.createElement('optgroup'); ukGroup.label = 'UK species';
+  UK_SPECIES.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; ukGroup.appendChild(o); });
+  speciesSelectEl.appendChild(ukGroup);
+  const exoticGroup = document.createElement('optgroup'); exoticGroup.label = 'Exotic / overseas species';
+  EXOTIC_SPECIES.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; exoticGroup.appendChild(o); });
+  speciesSelectEl.appendChild(exoticGroup);
+  const otherOpt = document.createElement('option'); otherOpt.value = 'Other'; otherOpt.textContent = 'Other';
+  speciesSelectEl.appendChild(otherOpt);
+
+  const wishSpeciesEl = document.getElementById('wish-species');
+  const wishUkGroup = document.createElement('optgroup'); wishUkGroup.label = 'UK species';
+  UK_SPECIES.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; wishUkGroup.appendChild(o); });
+  wishSpeciesEl.appendChild(wishUkGroup);
+  const wishExoticGroup = document.createElement('optgroup'); wishExoticGroup.label = 'Exotic / overseas species';
+  EXOTIC_SPECIES.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; wishExoticGroup.appendChild(o); });
+  wishSpeciesEl.appendChild(wishExoticGroup);
+  const wishOtherOpt = document.createElement('option'); wishOtherOpt.value = 'Other'; wishOtherOpt.textContent = 'Other';
+  wishSpeciesEl.appendChild(wishOtherOpt);
+
+  const legacyMonthEl = document.getElementById('f-legacyMonth');
+  MONTH_NAMES.forEach((m, i) => {
+    const o = document.createElement('option');
+    o.value = String(i + 1);
+    o.textContent = m;
+    legacyMonthEl.appendChild(o);
+  });
+
+  document.getElementById('wishForm').addEventListener('submit', handleWishSubmit);
+  document.getElementById('planForm').addEventListener('submit', handlePlanSubmit);
+
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    if (t.dataset.view === 'add' && editingId === null) resetForm();
+    setView(t.dataset.view);
+  }));
+
+  document.getElementById('filterYear').addEventListener('change', renderLog);
+  document.getElementById('filterMonth').addEventListener('change', renderLog);
+  document.getElementById('sortOrder').addEventListener('change', renderLog);
+  document.getElementById('filterVenue').addEventListener('change', renderLog);
+  document.getElementById('filterSpecies').addEventListener('change', renderLog);
+  document.getElementById('searchBox').addEventListener('input', renderLog);
+  document.getElementById('clearFiltersBtn').addEventListener('click', clearFilters);
+
+  document.getElementById('statsFilterYear').addEventListener('change', renderStats);
+  document.getElementById('statsFilterVenue').addEventListener('change', renderStats);
+  document.getElementById('statsClearBtn').addEventListener('click', clearStatsFilters);
+
+  document.getElementById('f-species').addEventListener('change', toggleSpeciesDetailVisibility);
+  document.getElementById('f-legacy').addEventListener('change', toggleLegacyMode);
+  document.getElementById('f-blank').addEventListener('change', toggleBlankMode);
+  document.getElementById('catchForm').addEventListener('submit', handleFormSubmit);
+  document.getElementById('cancelEdit').addEventListener('click', () => { resetForm(); setView('log'); });
+  document.getElementById('f-photo').addEventListener('change', handlePhotoInput);
+  document.getElementById('fetchWeatherBtn').addEventListener('click', fetchWeather);
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxPrev').addEventListener('click', () => lightboxStep(-1));
+  document.getElementById('lightboxNext').addEventListener('click', () => lightboxStep(1));
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+  document.getElementById('de-save').addEventListener('click', saveSessionDateEdit);
+  document.getElementById('de-cancel').addEventListener('click', closeSessionDateEditor);
+  document.getElementById('dateEditorOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'dateEditorOverlay') closeSessionDateEditor();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').hidden) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxStep(-1);
+      if (e.key === 'ArrowRight') lightboxStep(1);
+    }
+    if (!document.getElementById('dateEditorOverlay').hidden && e.key === 'Escape') closeSessionDateEditor();
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', exportData);
+  document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change', (e) => {
+    if (e.target.files[0]) importData(e.target.files[0]);
+    e.target.value = '';
+  });
+
+  document.getElementById('addNewBtn').addEventListener('click', openAddForm);
+  document.getElementById('addHistoricBtn').addEventListener('click', openHistoricPBForm);
+
+  document.getElementById('authForm').addEventListener('submit', (e) => { e.preventDefault(); doSignIn(); });
+  document.getElementById('authSignUpBtn').addEventListener('click', doSignUp);
+  document.getElementById('signOutBtn').addEventListener('click', doSignOut);
+}
+
+/* ----- Auth ----- */
+function showAuthGate(message) {
+  document.getElementById('authGate').hidden = false;
+  document.getElementById('app').hidden = true;
+  document.getElementById('authError').textContent = message || '';
+}
+function showApp() {
+  document.getElementById('authGate').hidden = true;
+  document.getElementById('app').hidden = false;
+}
+
+async function doSignUp() {
+  const email = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  if (!email || !password) { showAuthGate('Enter an email and password first.'); return; }
+  try {
+    await withBusy(async () => {
+      const { data, error } = await supabaseClient.auth.signUp({ email, password });
+      if (error) throw error;
+      if (data.session) {
+        await handleAuthedSession(data.session.user);
+      } else {
+        showAuthGate('Account created — check your email to confirm it, then sign in.');
+      }
+    }, 'Sign up failed');
+  } catch (err) { showAuthGate('Sign up failed: ' + (err.message || err)); }
+}
+
+async function doSignIn() {
+  const email = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  if (!email || !password) { showAuthGate('Enter an email and password first.'); return; }
+  try {
+    await withBusy(async () => {
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      await handleAuthedSession(data.user);
+    }, 'Sign in failed');
+  } catch (err) { showAuthGate('Sign in failed: ' + (err.message || err)); }
+}
+
+async function doSignOut() {
+  await supabaseClient.auth.signOut();
+  currentUser = null;
+  catches = []; wishlist = []; plans = [];
+  showAuthGate('Signed out.');
+}
+
+async function loadAllData() {
+  await withBusy(async () => {
+    catches = await fetchCatches();
+    wishlist = await fetchWishlist();
+    plans = await fetchPlans();
+  }, 'Could not load your data');
+  resetForm();
+  renderLog();
+  renderStats();
+}
+
+async function handleAuthedSession(user) {
+  currentUser = user;
+  showApp();
+  try {
+    await withBusy(() => migrateIfNeeded(), 'First-time setup failed');
+  } catch (err) {
+    // still try to load whatever exists rather than getting stuck
+  }
+  await loadAllData();
+}
+
+async function boot() {
+  wireUpUI();
+
+  if (!window.supabase) {
+    showAuthGate('The Supabase library did not load — check your internet connection and reload.');
+    return;
+  }
+  if (!SUPABASE_CONFIGURED) {
+    showAuthGate('This app needs to be connected to your Supabase project first — see the setup guide, then paste your URL and anon key into the SUPABASE_URL / SUPABASE_ANON_KEY constants near the top of the script.');
+    return;
+  }
+
+  supabaseClient.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT') { showAuthGate('Signed out.'); }
+  });
+
+  const { data } = await supabaseClient.auth.getSession();
+  if (data && data.session) {
+    await handleAuthedSession(data.session.user);
+  } else {
+    showAuthGate();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', boot);
+</script>
+</body>
+</html>
