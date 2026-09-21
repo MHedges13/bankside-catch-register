@@ -1051,8 +1051,9 @@ const SPECIES_LIST = UK_SPECIES.concat(EXOTIC_SPECIES).concat(['Other']);
    -> Settings -> API). Both are safe to expose in client-side code;
    Row Level Security is what actually protects your data.
    ================================================================== */
-const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
+// Updated Supabase Configuration
+const SUPABASE_URL = 'https://jytdhynausoolunbdgni.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_4XRghmxrJ2Tv0QusdtQjaw_L0rinhJf';
 
 const SUPABASE_CONFIGURED = SUPABASE_URL.indexOf('PASTE_') !== 0 && SUPABASE_ANON_KEY.indexOf('PASTE_') !== 0;
 let supabaseClient = null;
