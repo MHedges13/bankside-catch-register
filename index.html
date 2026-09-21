@@ -1047,17 +1047,33 @@ const SPECIES_LIST = UK_SPECIES.concat(EXOTIC_SPECIES).concat(['Other']);
 
 /* ==================================================================
    SUPABASE CONFIG
-   Paste your Project URL and anon public key here (Supabase dashboard
-   -> Settings -> API). Both are safe to expose in client-side code;
-   Row Level Security is what actually protects your data.
    ================================================================== */
 const SUPABASE_URL = 'https://jytdhynausoolunbdgni.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_4XRghmxrJ2Tv0QusdtQjaw_L0rinhJf';
 
-const SUPABASE_CONFIGURED = SUPABASE_URL.indexOf('PASTE_') !== 0 && SUPABASE_ANON_KEY.indexOf('PASTE_') !== 0;
-let supabaseClient = null;
-if (SUPABASE_CONFIGURED && window.supabase) {
-  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+function getSupabaseClient() {
+  if (!window.supabase) {
+    console.error("Supabase SDK not loaded yet");
+    return null;
+  }
+  return window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    global: {
+      headers: {
+        'apikey': SUPABASE_ANON_KEY
+      }
+    }
+  });
+}
+
+// Initial attempt
+let supabaseClient = getSupabaseClient();
+
+// Helper to ensure client exists before any Auth request
+function ensureClient() {
+  if (!supabaseClient && window.supabase) {
+    supabaseClient = getSupabaseClient();
+  }
+  return supabaseClient;
 }
 
 const PHOTO_BUCKET = 'catch-photos';
